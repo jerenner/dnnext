@@ -9,29 +9,118 @@
 
 \title{Background rejection in NEXT using deep neural networks}
 
-%% %simple case: 2 authors, same institution
-%% \author{A. Uthor}
-%% \author{and A. Nother Author}
-%% \affiliation{Institution,\\Address, Country}
-
-% more complex case: 4 authors, 3 institutions, 2 footnotes
-\author{NEXT Collaboration:}
+\author{The NEXT Collaboration\newline}
 \author[a,1]{J. Renner,\note{Corresponding author.}}
 \author[b]{A. Farbin,}
-\author[a]{J.M. Benlloch}
-\author[a]{P. Ferrario}
+\author[a]{J. M. Benlloch-Rodr\'{i}guez,}
+\author[a]{P. Ferrario,}
+\author[a]{J. Mu\~{n}oz Vidal,}
+\author[a]{V. \'{A}lvarez,}
+\author[h]{C. D. R. Azevedo,}
+\author[c]{F. I. G. Borges,}
+\author[a]{S. C\'{a}rcel,}
+\author[d]{S. Cebri\'{a}n,}
+\author[a]{A. Cervera,}
+\author[c]{C. A. N. Conde,}
+\author[a]{J. D\'{i}az,}
+\author[p]{M. Diesburg,}
+\author[f]{R. Esteve,}
+\author[c]{L. M. P. Fernandes,}
+\author[h]{A. L. Ferreira,}
+\author[c]{E. D. C. Freitas,}
+\author[e]{V. M. Gehman,}
+\author[e]{A. Goldschmidt,}
+\author[q]{D. Gonz\'{a}lez-D\'{i}az,}
+\author[i]{R. M. Guti\'{e}rrez,}
+\author[j]{J. Hauptman,}
+\author[c]{C. A. O. Henriques,}
+\author[k]{J. A. Hernando Morata,}
+\author[l]{L. Labarga,}
+\author[a]{A. Laing,}
+\author[p]{P. Lebrun,}
+\author[a]{I. Liubarsky,}
+\author[a]{N. L\'{o}pez-March,}
+\author[a]{D. Lorca,}
+\author[i]{M. Losada,}
+\author[f]{A. Mar\'{i},}
+\author[r]{J. Mart\'{i}n-Albo,}
+\author[k]{G. Mart\'{i}nez-Lema,}
+\author[a]{A. Mart\'{i}nez,}
+\author[e]{T. Miller,}
+\author[a]{F. Monrabal,}
+\author[a]{M. Monserrate,}
+\author[c]{C. M. B. Monteiro,}
+\author[f]{F. J. Mora,}
+\author[h]{L. M. Moutinho,}
+\author[a]{M. Nebot-Guinot,}
+\author[a]{P. Novella,}
+\author[b]{D. Nygren,}
+\author[p]{A. Para,}
+\author[m]{J. L. P\'{e}rez-Aparicio,}
+\author[l]{J. P\'{e}rez,}
+\author[a]{M. Querol,}
+\author[n]{L. Ripoll,}
+\author[a]{J. Rodr\'{i}guez,}
+\author[c]{F. P. Santos,}
+\author[c]{J. M. F. dos Santos,}
+\author[a]{L. Serra,}
+\author[e]{D. Shuman,}
+\author[a]{A. Sim\'{o}n,}
+\author[o]{C. Sofka,}
+\author[a]{M. Sorel,}
+\author[o]{T. Stiegler,}
+\author[f]{J. F. Toledo,}
+\author[n]{J. Torrent,}
+\author[g]{Z. Tsamalaidze,}
+\author[h]{J. F. C. A. Veloso,}
+\author[d]{J. A. Villar,}
+\author[o]{R. Webb,}
+\author[o]{J. White,}
+\author[a]{N. Yahlali,}
+\author[i]{H. Yepes-Ram\'{i}rez}
 
-
-\affiliation[a]{Instituto de F\'isica Corpuscular (IFIC), CSIC \& Universitat de Val\`encia,\\ 
-	Calle Catedr\'atico Jos\'e Beltr\'an, 2, 46980 Paterna, Valencia, Spain\\}
+\affiliation[a]{Instituto de F\'{i}sica Corpuscular (IFIC), CSIC \& Universitat de Val\`{e}ncia,\\ 
+	Calle Catedr\'{a}tico Jos\'{e} Beltr\'{a}n, 2, Paterna, Valencia, 46980 Spain}
 \affiliation[b]{University of Texas at Arlington\\
-	701 S. Nedderman Drive, Arlington, TX 76019, USA\\}
+	701 S. Nedderman Drive, Arlington, Texas, 76019 USA}
+\affiliation[c]{Departamento de Fisica, Universidade de Coimbra, \\
+	Rua Larga, Coimbra, 3004-516 Portugal}
+\affiliation[d]{Lab. de F\'{i}sica Nuclear y Astropart\'{i}culas, Universidad de Zaragoza,\\
+	Calle Pedro Cerbuna, 12, Zaragoza, 50009 Spain}
+\affiliation[e]{Lawrence Berkeley National Laboratory (LBNL),\\
+	1 Cyclotron Road, Berkeley, California, 94720 USA}
+\affiliation[f]{Instituto de Instrumentaci\'{o}n para Imagen Molecular (I3M), Universitat Polit\`{e}cnica de Val\`{e}ncia,\\
+	Camino de Vera, s/n, Edificio 8B, Valencia, 46022 Spain}
+\affiliation[g]{Joint Institute for Nuclear Research (JINR),\\
+	Joliot-Curie, 6, Dubna, 141980 Russia}
+\affiliation[h]{Institute of Nanostructures, Nanomodelling and Nanofabrication (i3N), Universidade de Aveiro,\\
+	Campus de Santiago, Aveiro, 3810-193 Portugal}
+\affiliation[i]{Centro de Investigaciones, Universidad Antonio Nari\~{n}o,\\
+	Carretera 3 este No. 47A-15, Bogot\'{a}, Colombia}
+\affiliation[j]{Department of Physics and Astronomy, Iowa State University,\\
+	12 Physics Hall, Ames, Iowa, 50011-3160 U.S.A.}
+\affiliation[k]{Instituto Gallego de F\'{i}sica de Altas Energ\'{i}as (IGFAE), Univ. de Santiago de Compostela,\\
+	Campus sur, R\'{u}a Xos\'{e} Mar\'{i}a Su\'{a}rez N\'{u}\~{n}ez, s/n, Santiago de Compostela, 15782 Spain}
+\affiliation[l]{Departamento de F\'{i}sica Te\'{o}rica, Universidad Aut\'{o}noma de Madrid,\\
+	Ciudad Universitaria de Cantoblanco, Madrid, 28049 Spain}
+\affiliation[m]{Dpto. de Mec\'{a}nica de Medios Continuos y Teor\'{i}a de Estructuras, Univ. Polit\`{e}cnica de Val\`{e}ncia,\\
+	Camino de Vera, s/n, Valencia, 46071 Spain}
+\affiliation[n]{Escola Polit\`{e}cnica Superior, Universitat de Girona,\\
+	Av. Montilivi, s/n, Girona, 17071 Spain}
+\affiliation[o]{Department of Physics and Astronomy, Texas A\&M University,\\
+	College Station, Texas, 77843-4242 U.S.A.}
+\affiliation[p]{Fermi National Accelerator Laboratory,\\
+	Batavia, Illinois, 60510 U.S.A.}
+\affiliation[q]{CERN, European Organization for Nuclear Research,\\
+	Geneva, 1211 Switzerland}
+\affiliation[r]{Department of Physics, University of Oxford,\\
+	Parks Road, Oxford, OX1 3PU United Kingdom}
 
 % e-mail addresses: one for each author, in the same order as the authors
 \emailAdd{jrenner@ific.uv.es}
 
 
-%\bibliographystyle{unsrtnat}
+\bibliographystyle{plain}
 \input{commands}
 
 \abstract{We investigate the potential of using deep learning techniques to reject background events in searches
@@ -213,8 +302,10 @@ shown in figure \ref{fig.exampleProjs}.
 
 \subsection{Analysis of NEXT-100 Monte Carlo}\label{ssec:NEXTMCanalysis}
 To compare the ability of the DNN to classify events directly with the performance of the topological analysis of section \ref{ssec:TopologicalAnalysis}, we consider NEXT-100 Monte Carlo 
-events that have passed all cuts (1-6) described in section \ref{ssec:NEXT100MC}.  The GoogLeNet DNN was trained on 30000 such events (15000 signal and 15000 background) over 30 epochs, 
-and an independent set of 6000 (3000 signal and 3000 background) events was used as a test dataset.  Because these were the exact same events as those used in the previous
+events that have passed all cuts (1-6) described in section \ref{ssec:NEXT100MC}, with chosen voxel sizes of both 2x2x2 cubic mm and 10x10x5 cubic mm.  For each chosen voxel size, the 
+GoogLeNet DNN was trained on 30000 such events (15000 signal and 15000 background) over 30 epochs, 
+and an independent set of events was used as a test dataset (6000 in the 2x2x2 voxel case and 4000 in the 10x10x5 case, split evenly between signal and background).  Because these were 
+the exact same events as those used in the previous
 topological analysis, the classification into signal and background from both analyses can be compared directly.  The results are shown in table \ref{tbl.DNNcomparison}.  The DNN
 analysis performs better than the conventional analysis, but there is still potential room for improvement.  
 
@@ -222,12 +313,15 @@ analysis performs better than the conventional analysis, but there is still pote
 	\begin{center}
 		\caption[DNN analysis summary]{\label{tbl.DNNcomparison}Comparison of conventional and DNN-based analyses.  The comparison shows, for a given percentage of signal events
 			correctly classified, the number of background events accepted (mistakenly classified as signal).}
-		\begin{tabular}{ccc}
+		\begin{tabular}{rcc}
 			\\
-			\textbf{Analysis} & \textbf{Signal efficiency (\%)} & \textbf{Background accepted (\%)}\\
+			\textbf{Analysis} & \textbf{Signal eff. (\%)} & \textbf{B.G. accepted (\%)}\\
 			\hline
-			DNN analysis & 84.16 & 5.00\\
-			Conventional analysis & 84.15 & 8.79\\
+			DNN analysis (2x2x2 voxels) & 84.16 & 5.00\\
+			Conventional analysis (2x2x2 voxels) & 84.15 & 8.79\\
+			\hline
+			DNN analysis (10x10x5 voxels) & 74.23 & 8.30\\
+			Conventional analysis (10x10x5 voxels) & 74.22 & 11.37\\
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -240,8 +334,8 @@ the conventional analysis.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.48]{fig/sigvsb_2x2x2_DNN.png}
-	\caption{\label{fig_svsb}Signal efficiency vs. background rejection for DNN analysis of voxelized (2x2x2 cubic mm), single-track NEXT-100 Monte Carlo events.}
+	\includegraphics[scale=0.6]{fig/sigvsbg_DNN.pdf}
+	\caption{\label{fig_svsb}Signal efficiency vs. background rejection for DNN analysis of voxelized (2x2x2 and 10x10x5 cubic mm), single-track NEXT-100 Monte Carlo events.}
 \end{figure}
 
 \subsection{Evaluating the DNN analysis}\label{ssec:DNNeval}
@@ -286,28 +380,26 @@ A summary of the Monte Carlo simulations run and the classification accuracies o
 			used in the training procedure, and between 2000-3000 signal and 2000-3000 background events independent of the training set were used to determine the accuracy.}
 		\begin{tabular}{rc}
 			\\
-			\textbf{Run description} & \textbf{Average accuracy} (\%)\\
+			\textbf{Run description} & \textbf{Avg. accuracy} (\%)\\
 			\hline
 			toy MC, ideal & 99.8\\
 			toy MC, realistic \bbonu\,distribution & 98.9\\
 			Xe box GEANT4, no secondaries, no E-fluctuations & 98.3\\
-			Xe box GEANT4, no secondaries, no E-fluctuations, no bremsstrahlung & 98.3\\
+			Xe box GEANT4, no secondaries, no E-fluctuations, no brem. & 98.3\\
 			toy MC, realistic \bbonu\,distribution, double multiple scattering & 97.8\\
 			Xe box GEANT4, no secondaries & 94.6\\
 			NEXT-100 GEANT4 & 93.1\\
 			Xe box GEANT4, no E-fluctuations & 93.0\\
-			Xe box, no bremsstrahlung & 92.4\\
+			Xe box, no brem. & 92.4\\
 			Xe box, all physics & 92.1
 		\end{tabular}
 	\end{center}
 \end{table}
 
-The production of a large secondary (``delta'') electron near the beginning of the track in a single-electron event, for example, could produce an event that looks almost indistinguishable from 
-a double-beta event in topology.  (Discuss further the ``zoology'' of events misclassified by the DNN.)
+(Do we want to discuss further the ``zoology'' of events misclassified by the DNN?  The production of a large secondary (``delta'') electron near the beginning of the track in a single-electron event, for example, could produce an event that looks almost indistinguishable from a double-beta event in topology.)
 
 \section{Conclusions}
-DNN analysis with just three projections seems to be capable of outperforming conventional analysis.  Discuss future plans to develop an optimized DNN analysis and speculate
-on possible improvements.
+A DNN-based analysis using GoogLeNet with just three projections seems to be capable of outperforming, in signal/background separation, a conventional analysis based on locating energy ``blobs'' at the ends of the tracks produced by energetic electrons.  The production of secondaries coupled with energy fluctuations in energy deposition seems to be the principle cause of accuracy loss in the DNN analysis, at least in the case of high-resolution ($\sim$ 2 mm) reconstruction.  Future studies geared toward developing a DNN targeted on the problem at hand, and attempting to extract information on what characteristics of the tracks it is ``learning,'' would lead to a more complete understanding of the possibilities and limitations of a DNN analysis.
 
 \acknowledgments
 
