@@ -15,6 +15,7 @@
 \author[a]{J. M. Benlloch-Rodr\'{i}guez,}
 \author[a]{P. Ferrario,}
 \author[a]{J. Mu\~{n}oz Vidal,}
+\author[a,2]{J. J. G\'omez-Cadenas,\note{Spokesperson.}}
 \author[a]{V. \'{A}lvarez,}
 \author[h]{C. D. R. Azevedo,}
 \author[c]{F. I. G. Borges,}
@@ -28,7 +29,7 @@
 \author[c]{L. M. P. Fernandes,}
 \author[h]{A. L. Ferreira,}
 \author[c]{E. D. C. Freitas,}
-\author[e]{V. M. Gehman,}
+%\author[e]{V. M. Gehman,}
 \author[e]{A. Goldschmidt,}
 \author[q]{D. Gonz\'{a}lez-D\'{i}az,}
 \author[i]{R. M. Guti\'{e}rrez,}
@@ -42,13 +43,13 @@
 \author[a]{N. L\'{o}pez-March,}
 \author[a]{D. Lorca,}
 \author[i]{M. Losada,}
-\author[f]{A. Mar\'{i},}
+%\author[f]{A. Mar\'{i},}
 \author[r]{J. Mart\'{i}n-Albo,}
 \author[k]{G. Mart\'{i}nez-Lema,}
 \author[a]{A. Mart\'{i}nez,}
-\author[e]{T. Miller,}
+%\author[e]{T. Miller,}
 \author[a]{F. Monrabal,}
-\author[a]{M. Monserrate,}
+%\author[a]{M. Monserrate,}
 \author[c]{C. M. B. Monteiro,}
 \author[f]{F. J. Mora,}
 \author[h]{L. M. Moutinho,}
@@ -56,8 +57,8 @@
 \author[a]{P. Novella,}
 \author[b]{D. Nygren,}
 \author[p]{A. Para,}
-\author[m]{J. L. P\'{e}rez-Aparicio,}
-\author[l]{J. P\'{e}rez,}
+%\author[m]{J. L. P\'{e}rez-Aparicio,}
+%\author[l]{J. P\'{e}rez,}
 \author[a]{M. Querol,}
 \author[n]{L. Ripoll,}
 \author[a]{J. Rodr\'{i}guez,}
@@ -68,14 +69,14 @@
 \author[a]{A. Sim\'{o}n,}
 \author[o]{C. Sofka,}
 \author[a]{M. Sorel,}
-\author[o]{T. Stiegler,}
+%\author[o]{T. Stiegler,}
 \author[f]{J. F. Toledo,}
 \author[n]{J. Torrent,}
 \author[g]{Z. Tsamalaidze,}
 \author[h]{J. F. C. A. Veloso,}
-\author[d]{J. A. Villar,}
+%\author[d]{J. A. Villar,}
 \author[o]{R. Webb,}
-\author[o]{J. White,}
+\author[o,3]{J. White,\note{Deceased.}}
 \author[a]{N. Yahlali,}
 \author[i]{H. Yepes-Ram\'{i}rez}
 
@@ -123,10 +124,9 @@
 \bibliographystyle{plain}
 \input{commands}
 
-\abstract{We investigate the potential of using deep learning techniques to reject background events in searches
-	for neutrinoless double-beta decay with high pressure xenon time projection chambers capable of detailed track
-	reconstruction.  The differences in the topological signatures of background and signal events can be learned
-	by deep neural networks via training over many thousands of events.  These networks can then be used to classify
+\abstract{We investigate the potential of using deep learning techniques to reject background 
+events in searches for neutrinoless double-beta decay with high pressure xenon time projection 
+chambers capable of detailed track reconstruction.  The differences in the topological signatures of background and signal events can be learned by deep neural networks via training over many thousands of events.  These networks can then be used to classify
 	further events as signal or background, providing an additional background rejection factor at an acceptable loss of
 	efficiency.  This method is found to perform substantially better than previous methods developed based on the use of the
 	same topological signatures and has the potential for further improvement.}
@@ -150,17 +150,19 @@ The detection of \bbonu\,decay continues to present unique experimental challeng
 which can be calculated to some uncertainty, and the square of the effective neutrino mass $|m_{\beta\beta}|^2 = |\sum_{i=e,\nu,\tau}U_{ei}^2m_{i}|^2$ which is a combination of the neutrino
 masses $m_{i}$ and neutrino mixing matrix elements $U_{ei}$.  The lifetime is relatively shorter for a degenerate neutrino mass hierarchy ($m_1 \sim m_2 \sim m_3$), longer for an inverted 
 neutrino mass hierarchy ($m_1 \ll m_2 < m_3$), and longest for a normal mass hierarchy ($m_1 < m_2 \ll m_3$).  Experiments of the current generation contain approximately
-100 kg of the candidate isotope and are subject to several tens of counts per year of background events in their region of interest of energy selection near $Q_{\beta\beta}$.  These experiments
+100 kg of the candidate isotope and are subject to several tens of counts per year of background events in their region of interest of energy selection near $Q_{\beta\beta}$\cite{GomezCadenas:2013ue}.  These experiments
 will be capable of probing only the parameter space corresponding to the degenerate mass hierarchy, perhaps pushing into the inverted hierarchy.  In order to completely cover the parameter 
-space of the inverted mass hierarchy, experiments employing candidate isotope masses at the ton-scale with background rates of several counts per ton-year will be required.  
+space of the inverted mass hierarchy, experiments employing candidate isotope masses at the ton-scale with background rates of (at most) few counts per ton-year will be required.  
 
-NEXT (Neutrino Experiment with a Xenon TPC) \cite{Gomez-Cadenas:2014dxa} will search for neutrinoless double-beta decay in the Lab using a Time Projection Chamber (TPC) filled with 100 kg of 
-high-pressure xenon gas (HPXe) at 15 bar pressure enriched to 90\% in the candidate isotope $^{136}$Xe.  The detector will operate using electroluminescent readout (see figure \ref{fig.SS}), in which 
-ionization electrons are drifted in a region of relatively low electric field to a narrow region of relatively high electric field, in which they are then accelerated to energies high enough to excite but not 
-ionize the atoms of the xenon gas.  These excitations give rise to the emission of electroluminescent light which is detected by an energy plane of 60 photomulitplier tubes (PMTs) and a tracking 
-plane of about 8000 silicon photomultipliers (SiPMs).  The detected electroluminescent light signal is called (S2), and can be compared in time with the light detected (S1) due to the excitations 
-produced during the initial creation of the ionization track to determine the z-coordinate of its production.  The pattern of light observed on the tracking plane, located just behind the narrow 
-electroluminescent region, can be used to obtain the x-y location of the ionization electrons producing the corresponding S2.  The result is a 3D image of the ionization track produced within the 
+NEXT (Neutrino Experiment with a Xenon TPC) \cite{Gomez-Cadenas:2014dxa} will search for neutrinoless double-beta decay using a Time Projection Chamber (TPC) filled, in its first stage, with 100 kg of 
+high-pressure xenon gas (HPXe), enriched to 90\% in the $^{136}$Xe, and operating at a pressure between 10 and 20 bar.  The detector uses electroluminescence to amplify the signal and optical sensors (photomultipliers and the so called silicon photomultipliers or SiPMs) to readout both the primary scintillation light (S1), defining the start-of-the-interaction and the secondary scintillation (S2) produced by the amplification, in the electroluminescence region of the drift electrons (see figure \ref{fig.SS}). S2, in turn, is recorded by a plane of photomultiplier tubes (PMTs) located behind a transparent cathode (the so-called energy plane), and by a plane containing about 8,000 SiPMs, forming a matrix of pixels spaced at 1 cm pitch (the tracking plane). 
+% in which 
+%ionization electrons are drifted in a region of relatively low electric field to a narrow region of relatively high electric field, in which they are then accelerated to energies high enough to excite but not 
+%ionize the atoms of the xenon gas.  These excitations give rise to the emission of electroluminescent light which is detected by an energy plane of 60 photomulitplier tubes (PMTs) and a tracking 
+%plane of about 8000 silicon photomultipliers (SiPMs).  The detected electroluminescent light signal is called (S2), and can be compared in time with the light detected (S1) due to the excitations 
+%produced during the initial creation of the ionization track to determine the z-coordinate of its production.  
+The pattern of light observed on the tracking plane, located just behind the narrow 
+electroluminescent region, can be used to obtain the x-y location of the ionization electrons producing the corresponding S2.  The result, combined with the time at which light is recorded, is a 3D image of the ionization track produced within the 
 detector.  The amount of S2 light detected by the energy plane gives an accurate measurement of the energy of the event.  Together this information can be used to identify potential 
 \bbonu\,events from the various energy depositions produced in the active volume.
 
@@ -180,13 +182,19 @@ intends to confirm the suitability of high pressure xenon gas for operation at t
 
 \section{The NEXT Topological Signature}\label{sec:topology}
 One of the most important aspects of NEXT is its ability to image the ionization tracks produced by energetic electrons in its active volume.  Double-beta decay events have a distinct
-topological signature produced by two electrons emitted from a common vertex.  Such a track is substantially different from that of a single electron produced, for example, by photoelectric
-conversion of a high-energy gamma ray due to several factors.  First, the ionization density ($dE/dx$) increases rapidly with decreasing energy as the energy of the electron drops below about 1 MeV.  Furthermore, electron multiple scattering, the repeated scattering of the electron throughout the creation of its ionization path, also becomes more intense at lower energies.  Together
-these effects lead to a single-electron track that is long and relatively smoother near its beginning and becomes increasingly contorted until the electron comes to a stop, depositing
-its final several hundred keV of energy in a relatively smaller volume, which we describe as a ``blob.''  A double-beta event will look like two such tracks beginning at a single vertex.  Figure \ref{fig.ETRK2} compares the two types of
-tracks.  Our goal is to identify signal events and reject background events by analyzing the topology of the reconstructed track.  Here we will discuss how this is done by reconstructing an ordered
-track, locating the endpoints, and determining whether.  Later we will investigate the performance of deep learning techniques which should address, in principle, all details of the topology 
-of the entire track.
+topological signature, e.g, the presence on the event of two electrons emitted from a common vertex. In a HPXe chamber, the vertex cannot be identified, nor the individual electrons separated, due to the confusing effect of multiple scattering. However, the signature of those ``double-electron'' (or 2e) tracks is substantially different from that of a single electron (1e) produced, for example, by photoelectric or Compton 
+conversion of a high-energy gamma ray.  Figure \ref{fig.ETRK2} compares the two types of
+tracks. A single electron (figure  \ref{fig.ETRK2}--right) appears in the chamber as a long and relatively smooth track near its beginning and becomes increasingly contorted, due to increasing multiple scattering (as it loses energy ionizing the gas) until the electron comes to a stop, depositing
+its final several hundred keV of energy in a relatively smaller volume, which we describe as a ``blob.'' 
+%is due to several factors.  First, the ionization density ($dE/dx$) increases rapidly with decreasing energy as the energy of the electron drops below about 1 MeV.  Furthermore, electron multiple scattering, the repeated scattering of the electron throughout the creation of its ionization path, also becomes more intense at lower energies.  Together
+%these effects lead to a single-electron track that is long and relatively smoother near its beginning and becomes increasingly contorted until the electron comes to a stop, depositing
+%its final several hundred keV of energy in a relatively smaller volume, which we describe as a ``blob.''  
+A double-beta event (figure  \ref{fig.ETRK2}--left)  looks like two such tracks beginning at a single vertex.  
+%Figure \ref{fig.ETRK2} compares the two types of
+%tracks.  
+
+In NEXT is possible to separate signal from backgrounds using this topological signature. The conventional algorithm developed by the collaboration is based in reconstructing an ordered
+track, locating the endpoints, and determining whether the energy in those endpoints (blobs) is sufficiently large. Alternatively it is possible to use deep learning techniques, as discussed in this paper.   
 
 \begin{figure}[!htb]
 	\centering
@@ -197,38 +205,38 @@ of the entire track.
 \end{figure}
 
 \subsection{Monte Carlo Simulation}\label{ssec:NEXT100MC}
-The central Monte Carlo simulation in this study was performed in GEANT4 \cite{GEANT4}, and the full geometry of the NEXT-100 detector was modeled.  \bbonu\,events were
-simulated randomly throughout the active region, and gamma rays of energies 2.447 MeV and 2.614 MeV (corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl,
-respectively, two naturally occurring radioactive isotopes) were launched in the Monte Carlo from several different regions within the detector geometry. % confirm these energies with Javi 
+This study uses our GEANT4-based \cite{GEANT4} fast Monte Carlo. The simulation models the full geometry of the NEXT-100 detector.  Bot signal and background events were generated. Signal events (\bbonu) were
+simulated randomly throughout the active region of the detector, while the leading background events---gamma rays of energies 2.447 MeV and 2.614 MeV corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl,
+respectively---were shotfrom several different regions (e.g, energy and tracking plane, detector vessel, etc.) within the detector geometry. % confirm these energies with Javi 
 The resulting locations and magnitudes of the energy depositions in the active volume were recorded by GEANT4 as hits with a 1 mm minimum step size, and each event was then
 analyzed according to the following procedure:
 
 \begin{enumerate}
 	\item[1.] A fiducial cut was applied to the true Monte Carlo hits, ensuring that no more than 10 keV of energy was deposited within 2 cm of the edges of the active region.
-	\item[2.] An energy cut was applied to the true Monte Carlo energy, ensuring that all events contained a total deposited energy between 2.3 and 3.0 MeV.
-	\item[3.] The total energy of each event was smeared according to a detector resolution of 0.7\% FWHM.
-	\item[4.] An energy cut was appied ensuring a smeared energy of between 2.3 and 2.4 MeV.
-	\item[5.] The set consisting of true Monte Carlo hits was converted into one or more subsets of connected voxels.  A voxel was defined to be a small cubical volume of a chosen 
+	%\item[2.] An energy cut was applied to the true Monte Carlo energy, ensuring that all events contained a total deposited energy between 2.3 and 3.0 MeV.
+	\item[2.] The total energy of each event was smeared according to a (conservative) detector resolution of 0.7\% FWHM.
+	\item[3.] An energy cut was applied ensuring a energy of between 2.4 and 2.5 MeV. %????
+	\item[4.] The set consisting of true Monte Carlo hits was converted into one or more subsets of connected voxels.  A voxel was defined to be a small cubical volume of a chosen 
 	length, width, and height.  3D space was divided into voxels of the specified size, and the (smeared) energy of each hit was placed in the voxel in which it was located according to its
 	true position.  A connected set of voxels, one in which each voxel neighbored at least one other voxel in the set, was called a track, where ``neighboring'' voxels shared at least one face, edge,
-	or corner.
-	\item[6.] A cut was made passing only events with exactly one single track.  This was done to simplify further analysis and could in principle be relaxed in the future.
-\end{enumerate}
+	or corner. This ``voxelization of the track'' is a rather good representation of the outcome of the full reconstruction applied to NEXT events (for a discussion see \cite{NEXT_topology}). 
+	\item[5.] Only events with exactly one single track were accepted.  This cut effectively suppressed background events accompanied by the emission of x-rays associated to the de-excitation of the xenon atom (e.g, after a photoelectric interaction). 
+	\end{enumerate}
 
-At this point, the events were deemed to be ready to be analyzed according to their topological signature.  Note that the single track cut alone eliminated a significantly larger number of 
-background events than signal events, as the background events originated from gammas which had a higher probability of being subject to physics yielding a multi-site track (e.g., Compton 
-scattering).
+%%%%
+Table XX shows how the set of cuts described above reduces the signal and the leading backgrounds.  Notice that, in order to characterize the rejection power of the topological signature, a relatively large energy window of 100 keV around \Qbb\ is used. The total rejection power of NEXT will be the combination of the rejection power achieved by the pre-selection (cuts 1-5 above), the topological signature discussed in this paper and a final, stricter energy cut that takes event in a relatively narrow region of interest ROI around \Qbb. See \cite{Martin-Albo:2015rhw} for a detailed discussion.
 
-\subsection{Topological Analysis}\label{ssec:TopologicalAnalysis}
+\subsection{The standard NEXT topological analysis}\label{ssec:TopologicalAnalysis}
 After being subject to the cuts described in the previous section, the events were classified as signal or background based on the presence of one or two ``blobs'' of energy in the
-reconstructed track.  The procedure followed was similar to the one described in \cite{NEXT_topology}.  The track was reconstructed by finding the shortest path between each two 
+reconstructed track.  The procedure followed was similar to the one described in \cite{NEXT_topology, Martin-Albo:2015rhw}.  The track was reconstructed by finding the shortest path between each two 
 pairs of connected voxels (using the Breadth First Search (BFS) algorithm), and choosing the longest of these paths to be the ordered path.  Note that such a path may not have included, 
 in fact most likely did not include, all voxels in the event.  The first and last voxels in the path
 were considered to be the beginning and end of the track.  The energy in all voxels that were located within a given radius $r_b$ of the beginning of the track was summed to give
 an energy $E_{b,1}$, and similarly at the end of the track to give an energy $E_{b,2}$.  The histogram of $E_{b,1}$ vs. $E_{b,2}$ is shown in figure \ref{fig.blobcuts} for both signal and
 background events.  In this case, the distance between a voxel and the extremes of the track was calculated as 
-``along-the-track distance,'' in which the distance between any two voxels was integrated along the reconstructed track (as opposed to computing the Euclidean distance).  (How are voxels
-not in the main track treated?)
+``along-the-track distance,'' in which the distance between any two voxels was integrated along the reconstructed track (as opposed to computing the Euclidean distance). 
+% (How are voxels
+%not in the main track treated?)
 
 \begin{figure}[!htb]
 	\centering
@@ -239,6 +247,11 @@ not in the main track treated?)
 
 Now by applying a cut selecting signal events with two blobs, mandating that $E_{b,1} > 0.3$ MeV and $E_{b,2} > 0.3$ MeV, we eliminate all but 8.79\% of background ($^{208}$Tl) events 
 and keep 84.15\% of signal events.  The same procedure rejected all but 7.80\% of background events due to $^{214}$Bi.
+
+
+%Results depend of the size of the voxel, which in turn is chosen in the fast simulation to reflect the expected performance of the detector under specific operating conditions. Standard operation with pure Xenon, is characterized by large transverse diffusion, of the order of $\sim 1 cm/\sqrt{m}$~ and also large longitudinal diffusion, of the order of  $\sim 5 mm/\sqrt{m}$. To reflect this fact, the voxels corresponding to the ``standard NEXT configuration'' are chosen to have a size of 10 x 10 x 5 mm3 (see cite--Justo-thesis for discussion). On the other hand, recent work within the NEXT collaboration suggests that diffussion can be substantially reduced by adding small mixtures of quencher gases (cite paper-magnetic-field). We choose a second voxelization, of 2 x 2 x2 mm3 to reflect a "Optimized" case of low diffusion and study how this affects the performance of the topological signature".  PLOTS!
+
+%RESULTS with large and small voxels and CLASSICAL standard cuts. 
 
 \section{Deep Learning}
 The use of artificial neural networks to solve problems has been explored since the 1940s.  In recent years, with the dramatic increase in available computing power, the use of computationally
