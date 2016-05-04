@@ -214,7 +214,7 @@ track, locating the endpoints, and determining whether the energy in those endpo
 \subsection{Monte Carlo Simulation}\label{ssec:NEXT100MC}
 This study uses our GEANT4-based \cite{GEANT4} fast Monte Carlo. The simulation models the full geometry of the NEXT-100 detector.  Bot signal and background events were generated. Signal events (\bbonu) were
 simulated randomly throughout the active region of the detector, while the leading background events---gamma rays of energies 2.447 MeV and 2.614 MeV corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl,
-respectively---were shotfrom several different regions (e.g, energy and tracking plane, detector vessel, etc.) within the detector geometry. % confirm these energies with Javi 
+respectively---were shot from several different regions (e.g, energy and tracking plane, detector vessel, etc.) within the detector geometry. % confirm these energies with Javi 
 The resulting locations and magnitudes of the energy depositions in the active volume were recorded by GEANT4 as hits with a 1 mm minimum step size, and each event was then
 analyzed according to the following procedure:
 
@@ -222,43 +222,75 @@ analyzed according to the following procedure:
 	\item[1.] A fiducial cut was applied to the true Monte Carlo hits, ensuring that no more than 10 keV of energy was deposited within 2 cm of the edges of the active region.
 	%\item[2.] An energy cut was applied to the true Monte Carlo energy, ensuring that all events contained a total deposited energy between 2.3 and 3.0 MeV.
 	\item[2.] The total energy of each event was smeared according to a (conservative) detector resolution of 0.7\% FWHM.
-	\item[3.] An energy cut was applied ensuring a energy of between 2.4 and 2.5 MeV. %????
+	\item[3.] An energy cut was applied ensuring a energy of between 2.4 and 2.5 MeV.
 	\item[4.] The set consisting of true Monte Carlo hits was converted into one or more subsets of connected voxels.  A voxel was defined to be a small cubical volume of a chosen 
 	length, width, and height.  3D space was divided into voxels of the specified size, and the (smeared) energy of each hit was placed in the voxel in which it was located according to its
 	true position.  A connected set of voxels, one in which each voxel neighbored at least one other voxel in the set, was called a track, where ``neighboring'' voxels shared at least one face, edge,
 	or corner. This ``voxelization of the track'' is a rather good representation of the outcome of the full reconstruction applied to NEXT events (for a discussion see \cite{NEXT_topology}). 
 	\item[5.] Only events with exactly one single track were accepted.  This cut effectively suppressed background events accompanied by the emission of x-rays associated to the de-excitation of the xenon atom (e.g, after a photoelectric interaction). 
-	\end{enumerate}
+\end{enumerate}
 
 %%%%
-Table XX shows how the set of cuts described above reduces the signal and the leading backgrounds.  Notice that, in order to characterize the rejection power of the topological signature, a relatively large energy window of 100 keV around \Qbb\ is used. The total rejection power of NEXT will be the combination of the rejection power achieved by the pre-selection (cuts 1-5 above), the topological signature discussed in this paper and a final, stricter energy cut that takes event in a relatively narrow region of interest ROI around \Qbb. See \cite{Martin-Albo:2015rhw} for a detailed discussion.
+Table \ref{tbl.FastAnalysisResults} shows how the set of cuts described above reduces the signal and the primary backgrounds for Monte Carlo generated events with voxel sizes of 2 x 2 x 2 mm$^3$ and 10 x 10 x 5 mm$^3$ (as background events were generated from several regions of the detector, a subset of events generated from a single region is shown).  Notice that, in order to characterize the rejection power of the topological signature, a relatively large energy window of 100 keV around \Qbb\ is used. The total rejection power of NEXT will be the combination of the rejection power achieved by the pre-selection (cuts described in 1-5 above), the topological signature discussed in this paper and a final, stricter energy cut that accepts events in a relatively narrow region of interest ROI around \Qbb. See \cite{Martin-Albo:2015rhw} for a detailed discussion.
+
+\begin{table}[!htb]
+	\begin{center}
+		\caption[Fast analysis summary]{\label{tbl.FastAnalysisResults}Fraction of events remaining after each analysis cut, for signal events ($10^6$ initial events generated) and background events from $^{208}$Tl and $^{214}$Bi ($10^9$ initial events generated).}
+		\begin{tabular}{c|cc|cc|cc}
+			\\
+			 & \multicolumn{2}{c}{\textbf{Signal Events}} & \multicolumn{2}{c}{\textbf{BG Events ($^{208}$Tl)}} & \multicolumn{2}{c}{\textbf{BG Events ($^{214}$Bi)}}\\
+			\textbf{Cut} & 2x2x2 & 10x10x5 & 2x2x2 & 10x10x5 & 2x2x2 & 10x10x5\\
+			\hline
+			(Initial events) & 1.0 & 1.0 & 1.0 & 1.0 & 1.0 & 1.0\\
+			Fiducial & $6.76$\small{$\times 10^{-1}$} & $6.76$\small{$\times 10^{-1}$} & $1.78$\small{$\times 10^{-3}$} & $1.78$\small{$\times 10^{-3}$} & $2.17$\small{$\times 10^{-5}$} & $2.17$\small{$\times 10^{-5}$}\\
+			%True E & $6.76$\small{$\times 10^{-1}$} & $6.76$\small{$\times 10^{-1}$} & $1.76$\small{$\times 10^{-3}$} & $1.76$\small{$\times 10^{-3}$} & $2.15$\small{$\times 10^{-5}$} & $2.15$\small{$\times 10^{-5}$}\\
+			Smeared E & $6.64$\small{$\times 10^{-1}$} & $6.64$\small{$\times 10^{-1}$} & $2.14$\small{$\times 10^{-4}$} & $2.14$\small{$\times 10^{-4}$} & $1.59$\small{$\times 10^{-5}$} & $1.59$\small{$\times 10^{-5}$}\\
+			1-Track & $3.71$\small{$\times 10^{-1}$} & $4.76$\small{$\times 10^{-1}$} & $4.02$\small{$\times 10^{-6}$} & $9.12$\small{$\times 10^{-6}$} & $8.08$\small{$\times 10^{-7}$} & $1.85$\small{$\times 10^{-6}$}\\
+			Topology* & $3.13$\small{$\times 10^{-1}$} & $3.54$\small{$\times 10^{-1}$} & $3.20$\small{$\times 10^{-7}$} & $9.94$\small{$\times 10^{-7}$} & $6.60$\small{$\times 10^{-8}$} & $1.59$\small{$\times 10^{-7}$}\\
+		\end{tabular}
+	\end{center}
+	* See section \ref{ssec:TopologicalAnalysis}
+\end{table}
 
 \subsection{The standard NEXT topological analysis}\label{ssec:TopologicalAnalysis}
-After being subject to the cuts described in the previous section, the events were classified as signal or background based on the presence of one or two ``blobs'' of energy in the
+After being subject to the analysis (steps 1-5) described in the previous section, the events were classified as signal or background based on the presence of one or two ``blobs'' of energy in the
 reconstructed track.  The procedure followed was similar to the one described in \cite{NEXT_topology, Martin-Albo:2015rhw}.  The track was reconstructed by finding the shortest path between each two 
 pairs of connected voxels (using the Breadth First Search (BFS) algorithm), and choosing the longest of these paths to be the ordered path.  Note that such a path may not have included, 
 in fact most likely did not include, all voxels in the event.  The first and last voxels in the path
 were considered to be the beginning and end of the track.  The energy in all voxels that were located within a given radius $r_b$ of the beginning of the track was summed to give
-an energy $E_{b,1}$, and similarly at the end of the track to give an energy $E_{b,2}$.  The histogram of $E_{b,1}$ vs. $E_{b,2}$ is shown in figure \ref{fig.blobcuts} for both signal and
-background events.  In this case, the distance between a voxel and the extremes of the track was calculated as 
-``along-the-track distance,'' in which the distance between any two voxels was integrated along the reconstructed track (as opposed to computing the Euclidean distance). 
-% (How are voxels
-%not in the main track treated?)
+an energy $E_{b,1}$, and similarly at the end of the track to give an energy $E_{b,2}$.  
+
+The results depend on the size of the voxel, which in turn is chosen to reflect the expected performance of the detector under specific operating conditions. Standard operation with pure xenon is characterized by large transverse diffusion, of the order of $\sim 1 cm/\sqrt{m}$~ and also large longitudinal diffusion, of the order of  $\sim 5 mm/\sqrt{m}$. To reflect this, the voxels corresponding to the ``standard NEXT configuration'' are chosen to have a size of 10 x 10 x 5 mm$^3$ (see \cite{MartinAlbo_thesis} for discussion). On the other hand, recent work within the NEXT collaboration suggests that diffusion can be substantially reduced by adding small mixtures of quencher gases \cite{NEXT_BFIELD}. We choose a second voxelization, of 2 x 2 x 2 mm$^3$ to reflect an ``optimized'' case of low diffusion and study how this affects the performance of the topological signature.  Examples of events voxelized with sizes of 10 x 10 x 5 mm$^3$ and
+2 x 2 x 2 mm$^3$ are shown in Figs. \ref{fig.exampleProjs10105} and \ref{fig.exampleProjs222}.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale = 0.45]{fig/blobcuts_bb0nu_2x2x2_E1vsE2.png}
-	\includegraphics[scale = 0.45]{fig/blobcuts_Tl208_2x2x2_E1vsE2.png}
-	\caption{Computed blob energies $E_{b,1}$ vs. $E_{b,2}$ for $r_b = 15$ mm for signal (left) and background ($^{208}$Tl right) events.} \label{fig.blobcuts}
+	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina10105_v10x10x5_r200x200x200_2_bg.png}
+	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina10105_v10x10x5_r200x200x200_3_si.png}
+	\caption{\label{fig.exampleProjs10105}Projections in xy, yz, and xz for an example background (above) and signal (below) event voxelized with 10 x 10 x 5 mm$^3$ voxels.}
 \end{figure}
 
-Now by applying a cut selecting signal events with two blobs, mandating that $E_{b,1} > 0.3$ MeV and $E_{b,2} > 0.3$ MeV, we eliminate all but 8.79\% of background ($^{208}$Tl) events 
-and keep 84.15\% of signal events.  The same procedure rejected all but 7.80\% of background events due to $^{214}$Bi.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina222_v2x2x2_r200x200x200_0_bg.png}
+	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina222_v2x2x2_r200x200x200_2_si.png}
+	\caption{\label{fig.exampleProjs222}Projections in xy, yz, and xz for an example background (above) and signal (below) event voxelized with 2 x 2 x 2 mm$^3$ voxels.}
+\end{figure}
 
+The histogram of $E_{b,1}$ vs. $E_{b,2}$ is shown in figure \ref{fig.blobcuts} for both signal and
+background events analyzed with both chosen voxel sizes.  In this case, the distance between a voxel and the extremes of the track was calculated as 
+``along-the-track distance,'' in which the distance between any two voxels was integrated along the reconstructed track (as opposed to computing the Euclidean distance). 
 
-%Results depend of the size of the voxel, which in turn is chosen in the fast simulation to reflect the expected performance of the detector under specific operating conditions. Standard operation with pure Xenon, is characterized by large transverse diffusion, of the order of $\sim 1 cm/\sqrt{m}$~ and also large longitudinal diffusion, of the order of  $\sim 5 mm/\sqrt{m}$. To reflect this fact, the voxels corresponding to the ``standard NEXT configuration'' are chosen to have a size of 10 x 10 x 5 mm3 (see cite--Justo-thesis for discussion). On the other hand, recent work within the NEXT collaboration suggests that diffussion can be substantially reduced by adding small mixtures of quencher gases (cite paper-magnetic-field). We choose a second voxelization, of 2 x 2 x2 mm3 to reflect a "Optimized" case of low diffusion and study how this affects the performance of the topological signature".  PLOTS!
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale = 0.49]{fig/blobcuts_bb0nu_10x10x5_E1vsE2.png}
+	\includegraphics[scale = 0.49]{fig/blobcuts_Tl208_10x10x5_E1vsE2.png}	
+	\includegraphics[scale = 0.45]{fig/blobcuts_bb0nu_2x2x2_E1vsE2.png}
+	\includegraphics[scale = 0.45]{fig/blobcuts_Tl208_2x2x2_E1vsE2.png}
+	\caption{Computed blob energies $E_{b,1}$ vs. $E_{b,2}$ for signal (left) and $^{208}$Tl background (right) events with 10 x 10 x 5 mm$^3$ voxelization (above) and 2 x 2 x 2 mm$^3$ voxelization (below).  The blob radius chosen was $r_b = 18$ mm for the 10 x 10 x 5 mm$^3$ voxelization and $r_b = 15$ mm for the 2 x 2 x 2 mm$^3$ voxelization.} \label{fig.blobcuts}
+\end{figure}
 
-%RESULTS with large and small voxels and CLASSICAL standard cuts. 
+Now we apply a cut designed to choose signal events with two blobs and eliminate background events with only one blob, mandating that $E_{b,1}$ and $E_{b,2}$ are both greater than a threshold energy $E_{\mathrm{th}}$.  For the 10 x 10 x 5 mm$^3$ voxel size with $E_{\mathrm{th}} =$ 0.35 MeV, we eliminate all but 11.37\% of $^{208}$Tl background events and all but 10.07\% of $^{214}$Bi background events, and keep 74.22\% of signal events.  For the 2 x 2 x 2 mm$^3$ voxel size with $E_{\mathrm{th}} =$ 0.3 MeV we eliminate all but 8.79\% of $^{208}$Tl background events and all but 7.80\% of $^{214}$Bi background events, and keep 84.15\% of signal events.  Later we will attempt to use DNNs in place of the cut on $E_{b,1}$ and $E_{b,2}$ to improve these results.
 
 \section{Deep Learning}
 The use of artificial neural networks to solve problems has been explored since the 1940s.  In recent years, with the dramatic increase in available computing power, the use of computationally
@@ -266,7 +298,6 @@ intense neural networks with many inner layers has become feasible.  These neura
 amounts of data exhitibing a vast array of features.  This idea of ``deep learning'' has been applied to yield outstanding performance in solving difficult problems such as image and 
 speech recognition.
 
-% Details of GoogLeNet; what is a CNN
 Neural networks consist of layers of neurons which compute an output value based on one or several input values.  The output $z$ is a function of the weighted sum of the inputs $x_{i}$ plus a bias variable $b$, i.e. $z = f(\sum_{i}w_{i}x_{i} + b)$, where $f$ is called the activation function and $w_{i}$ are the weights of the neuron, one for each input.  The idea is that
 with several layers of many neurons connected together, the values of the final (``output'') layer of neurons will correspond to the solution of some problem given the values input to the
 initial layer (called the ``input'' layer).  The weights and biases of all neurons in the network together determine the final output value, and so the network must be trained (the weights and
@@ -310,15 +341,8 @@ section \ref{ssec:TopologicalAnalysis}.  We chose to use the GoogLeNet DNN for t
 deep learning framework along with an interface, DIGITS \cite{DIGITS}, which allows for fast creation of image datasets and facilitates their input to several DNN models.  For each simulated
 dataset, GoogLeNet was trained on several tens of thousands of input events on a single GPU (either a GeForce GTX TITAN or GeForce GTX TITAN X, depending on the dataset), and several
 thousand additional events as validation.  Each event was input to the net as a .png image consisting of three
-color (RGB) channels, one for each of three projections of the 3D voxelized track, (R, G, B) $\rightarrow$ (xy, yz, xz).  This information for a signal event and a background event is
-shown in figure \ref{fig.exampleProjs}.
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina222_v2x2x2_r200x200x200_0_bg.pdf}
-	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina222_v2x2x2_r200x200x200_2_si.pdf}
-	\caption{\label{fig.exampleProjs}Projections in xy, yz, and xz for an example background (above) and signal (below) event.}
-\end{figure}
+color (RGB) channels, one for each of three projections of the 3D voxelized track, (R, G, B) $\rightarrow$ (xy, yz, xz).  This information for a signal event and a background event was
+shown earlier for different voxelizations in Fig. \ref{fig.exampleProjs222} and Fig. \ref{fig.exampleProjs10105}.
 
 \subsection{Analysis of NEXT-100 Monte Carlo}\label{ssec:NEXTMCanalysis}
 To compare the ability of the DNN to classify events directly with the performance of the topological analysis of section \ref{ssec:TopologicalAnalysis}, we consider NEXT-100 Monte Carlo 
@@ -337,11 +361,11 @@ analysis performs better than the conventional analysis, but there is still pote
 			\\
 			\textbf{Analysis} & \textbf{Signal eff. (\%)} & \textbf{B.G. accepted (\%)}\\
 			\hline
-			DNN analysis (2x2x2 voxels) & 84.16 & 5.00\\
-			Conventional analysis (2x2x2 voxels) & 84.15 & 8.79\\
+			DNN analysis (2 x 2 x 2 voxels) & 84.16 & 5.00\\
+			Conventional analysis (2 x 2 x 2 voxels) & 84.15 & 8.79\\
 			\hline
-			DNN analysis (10x10x5 voxels) & 74.23 & 8.30\\
-			Conventional analysis (10x10x5 voxels) & 74.22 & 11.37\\
+			DNN analysis (10 x 10 x 5 voxels) & 74.23 & 8.30\\
+			Conventional analysis (10 x 10 x 5 voxels) & 74.22 & 11.37\\
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -398,25 +422,28 @@ A summary of the Monte Carlo simulations run and the classification accuracies o
 		\caption[DNN analysis summary]{\label{tbl.DNNsummary}Summary of DNN analysis for different Monte Carlo datasets.  The accuracy was computed assuming that the classification
 			of the DNN corresponded to the category (signal or background) with the higher ($> 50$\%) probability.  In each case, approximately 15000 signal and 15000 background events were
 			used in the training procedure, and between 2000-3000 signal and 2000-3000 background events independent of the training set were used to determine the accuracy.}
-		\begin{tabular}{rc}
+		\begin{tabular}{rrc}
 			\\
-			\textbf{Run description} & \textbf{Avg. accuracy} (\%)\\
+			\textbf{2x2x2 voxels} & \textbf{Run description} & \textbf{Avg. accuracy} (\%)\\
 			\hline
-			toy MC, ideal & 99.8\\
-			toy MC, realistic \bbonu\,distribution & 98.9\\
-			Xe box GEANT4, no secondaries, no E-fluctuations & 98.3\\
-			Xe box GEANT4, no secondaries, no E-fluctuations, no brem. & 98.3\\
-			toy MC, realistic \bbonu\,distribution, double multiple scattering & 97.8\\
-			Xe box GEANT4, no secondaries & 94.6\\
-			NEXT-100 GEANT4 & 93.1\\
-			Xe box GEANT4, no E-fluctuations & 93.0\\
-			Xe box, no brem. & 92.4\\
-			Xe box, all physics & 92.1
+			\multicolumn{2}{r}{toy MC, ideal} & 99.8\\
+			\multicolumn{2}{r}{toy MC, realistic \bbonu\,distribution} & 98.9\\
+			\multicolumn{2}{r}{Xe box GEANT4, no secondaries, no E-fluctuations} & 98.3\\
+			\multicolumn{2}{r}{Xe box GEANT4, no secondaries, no E-fluctuations, no brem.} & 98.3\\
+			\multicolumn{2}{r}{toy MC, realistic \bbonu\,distribution, double multiple scattering} & 97.8\\
+			\multicolumn{2}{r}{Xe box GEANT4, no secondaries} & 94.6\\
+			\multicolumn{2}{r}{NEXT-100 GEANT4} & 93.1\\
+			\multicolumn{2}{r}{Xe box GEANT4, no E-fluctuations} & 93.0\\
+			\multicolumn{2}{r}{Xe box, no brem.} & 92.4\\
+			\multicolumn{2}{r}{Xe box, all physics} & 92.1\\
+			\textbf{10x10x5 voxels} & & \\
+			\hline
+			\multicolumn{2}{r}{NEXT-100 GEANT4} & 86.5
 		\end{tabular}
 	\end{center}
 \end{table}
 
-(Do we want to discuss further the ``zoology'' of events misclassified by the DNN?  The production of a large secondary (``delta'') electron near the beginning of the track in a single-electron event, for example, could produce an event that looks almost indistinguishable from a double-beta event in topology.)
+%(Do we want to discuss further the ``zoology'' of events misclassified by the DNN?  The production of a large secondary (``delta'') electron near the beginning of the track in a single-electron event, for example, could produce an event that looks almost indistinguishable from a double-beta event in topology.)
 
 \section{Conclusions}
 A DNN-based analysis using GoogLeNet with just three projections seems to be capable of outperforming, in signal/background separation, a conventional analysis based on locating energy ``blobs'' at the ends of the tracks produced by energetic electrons.  The production of secondaries coupled with energy fluctuations in energy deposition seems to be the principle cause of accuracy loss in the DNN analysis, at least in the case of high-resolution ($\sim$ 2 mm) reconstruction.  Future studies geared toward developing a DNN targeted on the problem at hand, and attempting to extract information on what characteristics of the tracks it is ``learning,'' would lead to a more complete understanding of the possibilities and limitations of a DNN analysis.
