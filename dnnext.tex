@@ -47,9 +47,6 @@
 \author[a]{D. Lorca,}
 \author[i]{M. Losada,}
 %\author[f]{A. Mar\'{i},}
-\author[r]{J. Mart\'{i}n-Albo,}
-\author[k]{G. Mart\'{i}nez-Lema,}
-\author[a]{A. Mart\'{i}nez,}
 %\author[e]{T. Miller,}
 \author[r]{J. Mart\'{i}n-Albo,}
 \author[k]{G. Mart\'{i}nez-Lema,}
@@ -81,7 +78,6 @@
 \author[g]{Z. Tsamalaidze,}
 \author[h]{J. F. C. A. Veloso,}
 %\author[d]{J. A. Villar,}
-\author[o]{R. Webb,}
 \author[o,3]{J. White,\note{Deceased.}}
 \author[o]{R. Webb,}
 \author[a]{N. Yahlali,}
@@ -147,29 +143,34 @@ chambers capable of detailed track reconstruction.  The differences in the topol
 \flushbottom
 
 \section{Introduction}\label{sec:intro}
-\noindent Neutrinoless double-beta decay (\bbonu) is a rare nuclear process in which the nuclear charge changes by two units, and the full energy of the decay ($Q_{\beta\beta}$) is 
-emitted in the form of two electrons (or positrons).  It is essentially two simultaneous $\beta^{+}$ or $\beta^{-}$ decays in which no neutrinos are emitted.  While two-neutrino double-beta 
-decay ($2\nu\beta\beta$), two simultaneous beta decays in which the two neutrinos are present, is a process predicted by the standard model that has been observed in several isotopes, 
-\bbonu\,has never been observed, even after over 75 years of experimental effort.  If \bbonu\,does exist, this implies that the neutrino is its own anti-particle, that is, a
+Double beta decay with neutrino emission (\bbtnu) is a  process in which two simultaneous $\beta$-decays occur within a nucleus,
+
+\begin{equation}
+ (Z,A) \rightarrow (Z+2,A) + 2e^{-} + 2\bar{\nu}_{e}.
+\end{equation}
+
+This process is allowed in the Standard Model and has been observed in several isotopes.  Double-beta decay has also been
+postulated to exist in the zero-neutrino mode, or neutrinoless double-beta decay (\bbonu), in which the two 
+antineutrinos are not emitted and the total energy released in the decay, \Qbb, is 
+carried away by the two electrons.  The observation of \bbonu\ would imply that the neutrino is its own anti-particle, that is, a
 a Majorana particle \cite{Schechter_1982}, amongst other important physical implications (see for example \cite{GomezCadenas:2013ue, Cadenas_2012, Avignone_2008}).
 
 The detection of \bbonu\,decay continues to present unique experimental challenges.  For a given isotope, the lifetime of \bbonu\,decay depends on a nuclear matrix element, 
 which can be calculated to some uncertainty, and the square of the effective neutrino mass $|m_{\beta\beta}|^2 = |\sum_{i=e,\nu,\tau}U_{ei}^2m_{i}|^2$ which is a combination of the neutrino
-masses $m_{i}$ and neutrino mixing matrix elements $U_{ei}$.  The lifetime is relatively shorter for a degenerate neutrino mass hierarchy ($m_1 \sim m_2 \sim m_3$), longer for an inverted 
-neutrino mass hierarchy ($m_1 \ll m_2 < m_3$), and longest for a normal mass hierarchy ($m_1 < m_2 \ll m_3$).  Experiments of the current generation contain approximately
+masses $m_{i}$ and neutrino mixing matrix elements $U_{ei}$.  The lifetime is of the order of $10^{25}-10^{26}$~years for a degenerate neutrino mass hierarchy ($m_1 \sim m_2 \sim m_3$), $10^{26}-10^{27}$~years for an inverted 
+neutrino mass hierarchy ($m_1 \ll m_2 < m_3$), and longer than $10^{27}$~years  for a normal mass hierarchy ($m_1 < m_2 \ll m_3$).  Experiments of the current generation deploy approximately
 100 kg of the candidate isotope and are subject to several tens of counts per year of background events in their region of interest of energy selection near $Q_{\beta\beta}$\cite{GomezCadenas:2013ue}.  These experiments
 will be capable of probing only the parameter space corresponding to the degenerate mass hierarchy, perhaps pushing into the inverted hierarchy.  In order to completely cover the parameter 
 space of the inverted mass hierarchy, experiments employing candidate isotope masses at the ton-scale with background rates of (at most) few counts per ton-year will be required.  
 
-NEXT (Neutrino Experiment with a Xenon TPC) \cite{Gomez-Cadenas:2014dxa} will search for neutrinoless double-beta decay using a Time Projection Chamber (TPC) filled, in its first stage, with 100 kg of 
-high-pressure xenon gas (HPXe), enriched to 90\% in the $^{136}$Xe, and operating at a pressure between 10 and 20 bar.  The detector uses electroluminescence to amplify the signal and optical sensors (photomultipliers and the so called silicon photomultipliers or SiPMs) to readout both the primary scintillation light (S1), defining the start-of-the-interaction and the secondary scintillation (S2) produced by the amplification, in the electroluminescence region of the drift electrons (see figure \ref{fig.SS}). S2, in turn, is recorded by a plane of photomultiplier tubes (PMTs) located behind a transparent cathode (the so-called energy plane), and by a plane containing about 8,000 SiPMs, forming a matrix of pixels spaced at 1 cm pitch (the tracking plane). 
+NEXT (Neutrino Experiment with a Xenon TPC) \cite{Gomez-Cadenas:2014dxa} is an experiment to search for neutrinoless double-beta decay using a Time Projection Chamber (TPC) filled with 
+high-pressure xenon gas (HPXe), enriched to 90\% in  $^{136}$Xe.  The detector uses electroluminescence to amplify the signal and optical sensors (photomultipliers and the so called silicon photomultipliers or SiPMs) to readout both the primary scintillation light (S1), defining the start-of-the-interaction and the secondary scintillation (S2) produced by the amplification, in the electroluminescence region of the drift electrons (see figure \ref{fig.SS}). The photomultipliers are located behind the cathode, forming the so-called energy plane, while the SiPMs, located behind the anode, define a matrix of pixels called the tracking plane. 
 % in which 
 %ionization electrons are drifted in a region of relatively low electric field to a narrow region of relatively high electric field, in which they are then accelerated to energies high enough to excite but not 
 %ionize the atoms of the xenon gas.  These excitations give rise to the emission of electroluminescent light which is detected by an energy plane of 60 photomulitplier tubes (PMTs) and a tracking 
 %plane of about 8000 silicon photomultipliers (SiPMs).  The detected electroluminescent light signal is called (S2), and can be compared in time with the light detected (S1) due to the excitations 
 %produced during the initial creation of the ionization track to determine the z-coordinate of its production.  
-The pattern of light observed on the tracking plane, located just behind the narrow 
-electroluminescent region, can be used to obtain the x-y location of the ionization electrons producing the corresponding S2.  The result, combined with the time at which light is recorded, is a 3D image of the ionization track produced within the 
+The pattern of light observed on the tracking plane is used to compute the x-y location of the ionization electrons producing the corresponding S2.  The result, combined with the time at which light is recorded, is a 3D image of the ionization track produced within the 
 detector.  The amount of S2 light detected by the energy plane gives an accurate measurement of the energy of the event.  Together this information can be used to identify potential 
 \bbonu\,events from the various energy depositions produced in the active volume.
 
@@ -179,11 +180,11 @@ detector.  The amount of S2 light detected by the energy plane gives an accurate
 	\caption{Production and detection of S1 and S2 in an asymmetric HPXe TPC (figure from \cite{MartinAlbo_thesis}).} \label{fig.SS}
 \end{figure}
 
-In addition to performing a competitive search for \bbonu, NEXT will demonstrate potential 
+In addition to performing a competitive search for \bbonu, NEXT will explore potential 
 techniques for operation and background rejection at the ton-scale.  The NEXT collaboration has already built and tested several kg-scale prototypes, NEXT-DBDM \cite{Alvarez:2012kua} and
 NEXT-DEMO \cite{Alvarez:2012xda,Alvarez:2012kua,Alvarez:2013gxa,Lorca:2014sra}, which have both demonstrated the excellent energy resolution (extrapolated to 0.5-0.7\% FWHM at
 $Q_{\beta\beta}$) obtainable in high pressure xenon gas.  NEXT-DEMO has demonstrated the feasibility of signal/background discrimination based on the topology of reconstructed tracks,
-an essential component to identifying \bbonu\,events and rejecting background events (see section \ref{sec:topology}).  The collaboration is currently constructing the first phase of the experiment NEXT-NEW, a 10 kg prototype 
+an essential component to identifying \bbonu\,events and rejecting background events (see section \ref{sec:topology}).  The collaboration is currently commissioning the first phase of the experiment, the so called NEXT-NEW (or NEW for short\footnote{The name honours the memory of the late professor James White, whose knowledge and generosity were essential to launch the experiment.}). NEW deploys a  mass of 10 kg of xenon at 15 bar, the energy plane hosts 12 PMTs and the tracking plane near 2,000 SiPMs. Operation is foreseen in 2016 and 2017, with a possible extension to 2018. It will be followed by NEXT-100, deploying 100 kg of xenon at 15 bar, 60 PMTs in the energy plane and near 8,000 SiPMs in the tracking plane. 
 containing about 20\% of the sensors of the 100 kg detector (NEXT-100).  By confirming the ability to obtain good energy resolution and reconstructed tracks at several different scales, NEXT 
 intends to confirm the suitability of high pressure xenon gas for operation at the ton-scale.
 
@@ -199,7 +200,6 @@ its final several hundred keV of energy in a relatively smaller volume, which we
 A double-beta event (figure  \ref{fig.ETRK2}--left)  looks like two such tracks beginning at a single vertex.  
 %Figure \ref{fig.ETRK2} compares the two types of
 %tracks.  
-
 In NEXT is possible to separate signal from backgrounds using this topological signature. The conventional algorithm developed by the collaboration is based in reconstructing an ordered
 track, locating the endpoints, and determining whether the energy in those endpoints (blobs) is sufficiently large. Alternatively it is possible to use deep learning techniques, as discussed in this paper.   
 
@@ -212,9 +212,9 @@ track, locating the endpoints, and determining whether the energy in those endpo
 \end{figure}
 
 \subsection{Monte Carlo Simulation}\label{ssec:NEXT100MC}
-This study uses our GEANT4-based \cite{GEANT4} fast Monte Carlo. The simulation models the full geometry of the NEXT-100 detector.  Bot signal and background events were generated. Signal events (\bbonu) were
+This study uses our GEANT4-based \cite{GEANT4} fast Monte Carlo. The simulation models the full geometry of the NEXT-100 detector.   \bbonu events were
 simulated randomly throughout the active region of the detector, while the leading background events---gamma rays of energies 2.447 MeV and 2.614 MeV corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl,
-respectively---were shot from several different regions (e.g, energy and tracking plane, detector vessel, etc.) within the detector geometry. % confirm these energies with Javi 
+respectively, see \cite{Martin-Albo:2015rhw} for a thorough discussion---were shot from several different regions (e.g, energy and tracking plane, detector vessel, etc.) within the detector geometry. 
 The resulting locations and magnitudes of the energy depositions in the active volume were recorded by GEANT4 as hits with a 1 mm minimum step size, and each event was then
 analyzed according to the following procedure:
 
