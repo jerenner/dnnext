@@ -432,7 +432,7 @@ GoogLeNet DNN was trained on 30000 such events (15000 signal and 15000 backgroun
 and an independent set of events was used as a test dataset (6000 in the 2x2x2 voxel case and 4000 in the 10x10x5 case, split evenly between signal and background).  Because these events were
 taken from a subset of the exact same events as those used in the previous
 topological analysis, the classification into signal and background from both analyses can be compared directly.  The results are shown in table \ref{tbl.DNNcomparison}.  The DNN
-analysis performs better than the conventional analysis, but there is still potential room for improvement.  
+analysis performs better than the conventional analysis, but there is still potential room for improvement.
 
 \begin{table}[!htb]
 	\begin{center}
@@ -487,13 +487,28 @@ increased multiple scattering an additional 1\%.  However, even the two effects 
 full Monte Carlo.
 
 Therefore an alternate GEANT-based Monte Carlo was run in which the detector geometry was not present, and background events (single electrons) and signal events (two electrons emitted
-from a common vertex with a realistic \bbonu\,energy distribution) were generated in a large box of pure xenon gas at 15 bar.  An insignificant amount of energy smearing was applied to these
-events, and they were then subject to the same voxelization procedure and single-track cut as described in section \ref{ssec.reconstruction}.  Under these controlled conditions, many 
+from a common vertex with a realistic \bbonu\,energy distribution) were generated in a large box of pure xenon gas at 15 bar.  These events were then subject to the same voxelization 
+procedure and single-track cut as described in section \ref{ssec.reconstruction}.  Under these controlled conditions, many 
 events could be generated with different aspects of the physics switched on/off.  It was confirmed that with the same physics as that used in the NEXT-100 Monte Carlo, the DNN classified events 
-with similar accuracy as before.  Disabling bremsstrahlung seemed to have little effect on the accuracy.  Disabling energy fluctuations in GEANT had some small effect (approx. 1\% increase in
-accuracy), and disabling the production of secondaries (disallowing the production of secondaries with a range of less than 20 cm) had a more sigificant effect (approx. 2.5\% increase in accuracy),
-though still did not yield accuracy similar to the toy MC datasets.  It was found that disabling both energy fluctuations and the production of secondaries gave accuracies similar to the toy MC
-(about 98\%), and therefore we can conclude these are the physical effects that are often deceiving the DNN.
+with similar accuracy as before.  Disabling bremsstrahlung seemed to have little effect on the accuracy.  Disabling fluctuations of continuous energy losses in GEANT had some small 
+effect (approx. 1\% increase in accuracy), and disabling the production of secondaries (disallowing the production of secondaries with a range of less than 20 cm) had a more 
+significant effect (approx. 2.5\% increase in accuracy), though still did not yield accuracy similar to that of the toy MC datasets.  It was found that disabling both continuous energy fluctuations 
+and the production of secondaries gave accuracies similar to that of the toy MC events (about 98\%).
+
+Let us assume for a moment that the DNN is perfectly capable of taking into account all physical information available in an event, and therefore if it misclassifies an event, it is because some
+aspect of the physics of its production has caused it to project the physical image of an event from the incorrect category (signal or background).  Then our previous observations reveal what can cause a signal event to look like background and vice versa.  With ``ideal'' tracks produced according to the mean $dE/dx$ curve, the statistical possibilities that one type of event produces a track that resembles the majority of those of the other type are few.  Increasing multiple scattering and adding the realistic distribution of $0\nu\beta\beta$ event energies allows for more possibilities, for example signal events which appear to be backgrounds because one of the product electrons contains very little energy.  Adding the physics of secondary production but not including continuous energy fluctuations is somewhat deceiving, as energy fluctuations are still present in the simulated energies of the secondaries.  In this case, a background event in which a large secondary is produced early on in the production of the single-electron track can look like a two-electron double-beta event, and such an effect seems to be responsible for a significant number of
+inaccurate classifications.   After also including production of secondaries and continuous energy fluctuations, we see a classification accuracy indicative of a more significant number of statistical
+possibilities that a true background event could disguise itself as a signal event or vice versa.
+
+Perhaps, however, it is not the case that the DNN is capable of learning enough information to classify events perfectly, given that their physical signatures do not overlap.  It may actually be that
+as we introduce more physical effects, the problem becomes more complicated, and the DNN is simply not capable of learning enough information to separate the two types of events, although it
+is physically possible.  This is more difficult to understand considering some effects rather than others.   For example, when considering multiple scattering and energy fluctuations, one must ask
+just how contorted does a background event need to be, and in what ways does it need to be contorted, to make it look more like a signal event?  This question may only be answered by studying
+individual events or constructing more complex DNNs until no further improvement appears possible.  However, it is quite clear in the case of the realistic double-beta electron energy distribution
+that if one electron of the two is only given 10 keV energy, for the present detector position and energy resolution, the event will be physically indistinguishable from a background event
+regardless of how complex the DNN used.  It is quite likely, since the DNN was capable of yielding near-100\% accuracy for events of the toy MC - which though they lack sufficient multiple
+scattering and energy fluctuations to be fully realistic are still similar in many aspects to realistic events - that in the cases in which the DNN is failing the events physically appear to be of
+the wrong type.
 
 A summary of the Monte Carlo simulations run and the classification accuracies obtained is given in table \ref{tbl.DNNsummary}.  
 
