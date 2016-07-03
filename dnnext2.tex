@@ -292,7 +292,8 @@ NEXUS \cite{MartinAlbo_thesis}, the  GEANT4-based \cite{GEANT4} Monte Carlo simu
 
 The simulation begins by generating a large number of signal and background events. \bbonu\ events are randomly created throughout the active region of the detector, while the leading background events --- gamma rays of energies 2.447 MeV and 2.614 MeV corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl, respectively (see \cite{Martin-Albo:2015rhw} for a thorough discussion) --- are shot from several different regions (e.g, energy and tracking plane, detector vessel, etc.) within the detector geometry.  The resulting locations and magnitudes of the energy depositions in the active volume are recorded as ``true hits''. To speed up the propagation of the tracks, a minimum step size of 1 mm is used in NEXUS.
 
-The fast-simulation approach to producing reconstructed objects, starting from the true hits, takes into account the energy and spatial resolution. The former is introduced by simply smearing the total energy deposited by the event by the expected NEXT-100 resolution (we assume, conservatively, 0.7\% FWHM at \Qbb); the latter, by combining the resolution associated with the pixel pitch, the EL width and the diffusion into the voxel size. Thus, to emulate the response of NEXT-100 operating with pure xenon, the true hits are replaced by voxels of $10 \times 10 \times 5 \mathrm{~mm^3}$. The response of NEXT-100 under conditions of low diffusion is emulated by replacing the true hits by voxels of $2 \times 2 \times 2 \mathrm{~mm^3}$. Comparison between data and Monte Carlo in \cite{NEXT_topology} showed that choosing a voxel size of the same order as the maximum spread due to diffusion results in an acceptable (although somewhat conservative) simulation of the detector response. We have therefore considered a third case, with voxels of $5 \times 5 \times 3 \mathrm{~mm^3}$, which may be regarded as an optimistic emulation of the response of NEXT-100 with pure xenon, or a conservative simulation of the response with low-diffusion mixtures. 
+The fast-simulation approach to producing reconstructed objects, starting from the true hits, takes into account the energy and spatial resolution. The former is introduced by simply smearing the total energy deposited by the event by the expected NEXT-100 resolution (we assume, conservatively, 0.7\% FWHM at \Qbb); the latter, by combining the resolution associated with the pixel pitch, the EL width and the diffusion into the voxel size. Thus, to emulate the response of NEXT-100 operating with pure xenon, the true hits are replaced by voxels of $10 \times 10 \times 5 \mathrm{~mm^3}$. The response of NEXT-100 under conditions of low diffusion is emulated by replacing the true hits by voxels of $2 \times 2 \times 2 \mathrm{~mm^3}$. Comparison between data and Monte Carlo in \cite{NEXT_topology} showed that choosing a voxel size of the same order as the maximum spread due to diffusion results in an acceptable (although somewhat conservative) simulation of the detector response. 
+%We have therefore considered a third case, with voxels of $5 \times 5 \times 3 \mathrm{~mm^3}$, which may be regarded as an optimistic emulation of the response of NEXT-100 with pure xenon, or a conservative simulation of the response with low-diffusion mixtures. 
 
 Note that the procedure of smearing the true hits by some gaussian error, common in the fast-simulation of many experiments, does not work well here, since the concept of ``point resolution'' is not well defined in an HPXe-EL TPC, due to the effects already discussed (light spread in the EL gap and diffusion) combined with the twisted shape of the track. The fact that, for any given time slice, the tracking plane is receiving light from the portion of the track inside the EL grid, which in turn contains ionization electrons from several points of the track (due to diffusion), can be better captured by replacing each true hit by a voxel chosen to integrate the typical size of the above effects rather than by a ``smeared hit''. This is also the case when working with reconstructed data in an HPXe-EL TPC. As discussed above, the hits produced by the tracking plane must be replaced by voxels in order to produce a connected track. 
 
@@ -304,28 +305,27 @@ Note that the procedure of smearing the true hits by some gaussian error, common
 
  Once the list of voxels is obtained for each event, the data is processed as follows: 
 \begin{enumerate}
-	\item[1.] A fiducial cut is applied, ensuring that no more than 10 keV of energy was deposited within 2 cm of the edges of the active region.
-	\item[2.] Only events near \Qbb\ (in the energy window between 2.4 and 2.5 MeV) are accepted.
+	\item[1.] Only events near \Qbb\ (in the energy window between 2.4 and 2.5 MeV) are accepted.
+	\item[2.] A fiducial cut is applied, ensuring that no more than 10 keV of energy was deposited within 2 cm of the edges of the active region.
 	\item[3.] Tracks are formed using the BFS algorithm and only events with exactly one track are accepted.  This cut effectively suppresses background events accompanied by the emission of x-rays associated with the de-excitation of the xenon atom (e.g, after a photoelectric interaction). 
 \end{enumerate}
 
 %%%%
-Table \ref{tbl.FastAnalysisResults} shows how the set of cuts described above reduces the signal and the primary backgrounds for Monte Carlo generated events with voxel sizes of $2 \times 2 \times 2 \mathrm{~mm^3}$ and $10 \times 10 \times 5 \mathrm{~mm^3}$ (as background events were generated from several regions of the detector, a subset of events generated from a single region is shown).  Notice that, in order to characterize the rejection power of the topological signature, a relatively large energy window of 100 keV around \Qbb\ is used. The total rejection power of NEXT will be the combination of the rejection power achieved by the pre-selection (cuts 1-3 above), the topological signature cut (e.g, the requirement that the track is a 2-electron track, discussed in more detail below), and a final, stricter energy cut that accepts events in a relatively narrow region of interest (ROI) around \Qbb. See \cite{Martin-Albo:2015rhw} for a detailed discussion.
+Table \ref{tbl.FastAnalysisResults} shows how the set of cuts described above reduces the signal and the primary backgrounds for Monte Carlo generated events with voxel sizes of $2 \times 2 \times 2 \mathrm{~mm^3}$ and $10 \times 10 \times 5 \mathrm{~mm^3}$ (events were generated originating from the field cage surrounding the active region of the detector).  Notice that, in order to characterize the rejection power of the topological signature, a relatively large energy window of 100 keV around \Qbb\ is used. The total rejection power of NEXT will be the combination of the rejection power achieved by the pre-selection (cuts 1-3 above), the topological signature cut (e.g, the requirement that the track is a 2-electron track, discussed in more detail below), and a final, stricter energy cut that accepts events in a relatively narrow region of interest (ROI) around \Qbb. See \cite{Martin-Albo:2015rhw} for a detailed discussion.
 
 \begin{table}[!htb]
 	\begin{center}
-		\caption[Fast analysis summary]{\label{tbl.FastAnalysisResults}Fraction of events remaining after each analysis cut, for signal events ($10^6$ initial events generated) and background events from $^{208}$Tl and $^{214}$Bi ($10^9$ initial events generated).}
+		\caption[Fast analysis summary]{\label{tbl.FastAnalysisResults}Fraction of events remaining after each analysis cut, for signal events ($10^5$ initial events generated) and background events from $^{208}$Tl ($10^{9}$ initial events generated) and $^{214}$Bi ($10^{10}$ initial events generated).}
 		\begin{tabular}{c|cc|cc|cc}
 			\\
 			 & \multicolumn{2}{c}{\textbf{Signal Events}} & \multicolumn{2}{c}{\textbf{BG Events ($^{208}$Tl)}} & \multicolumn{2}{c}{\textbf{BG Events ($^{214}$Bi)}}\\
 			\textbf{Cut} & 2x2x2 & 10x10x5 & 2x2x2 & 10x10x5 & 2x2x2 & 10x10x5\\
 			\hline
 			(Initial events) & 1.0 & 1.0 & 1.0 & 1.0 & 1.0 & 1.0\\
-			Fiducial & $6.76$\small{$\times 10^{-1}$} & $6.76$\small{$\times 10^{-1}$} & $1.78$\small{$\times 10^{-3}$} & $1.78$\small{$\times 10^{-3}$} & $2.17$\small{$\times 10^{-5}$} & $2.17$\small{$\times 10^{-5}$}\\
-			%True E & $6.76$\small{$\times 10^{-1}$} & $6.76$\small{$\times 10^{-1}$} & $1.76$\small{$\times 10^{-3}$} & $1.76$\small{$\times 10^{-3}$} & $2.15$\small{$\times 10^{-5}$} & $2.15$\small{$\times 10^{-5}$}\\
-			Smeared E & $6.64$\small{$\times 10^{-1}$} & $6.64$\small{$\times 10^{-1}$} & $2.14$\small{$\times 10^{-4}$} & $2.14$\small{$\times 10^{-4}$} & $1.59$\small{$\times 10^{-5}$} & $1.59$\small{$\times 10^{-5}$}\\
-			1-Track & $3.71$\small{$\times 10^{-1}$} & $4.76$\small{$\times 10^{-1}$} & $4.02$\small{$\times 10^{-6}$} & $9.12$\small{$\times 10^{-6}$} & $8.08$\small{$\times 10^{-7}$} & $1.85$\small{$\times 10^{-6}$}\\
-			Topology* & $3.13$\small{$\times 10^{-1}$} & $3.54$\small{$\times 10^{-1}$} & $3.20$\small{$\times 10^{-7}$} & $9.94$\small{$\times 10^{-7}$} & $6.60$\small{$\times 10^{-8}$} & $1.59$\small{$\times 10^{-7}$}\\
+			Smeared E & $7.59$\small{$\times 10^{-1}$} & $7.59$\small{$\times 10^{-1}$} & $2.27$\small{$\times 10^{-3}$} & $2.27$\small{$\times 10^{-3}$} & $1.42$\small{$\times 10^{-4}$} & $1.42$\small{$\times 10^{-4}$}\\
+			Fiducial & $6.71$\small{$\times 10^{-1}$} & $6.68$\small{$\times 10^{-1}$} & $1.19$\small{$\times 10^{-3}$} & $1.17$\small{$\times 10^{-3}$} & $8.62$\small{$\times 10^{-5}$} & $8.54$\small{$\times 10^{-5}$}\\
+			1-Track & $3.75$\small{$\times 10^{-1}$} & $4.79$\small{$\times 10^{-1}$} & $7.90$\small{$\times 10^{-6}$} & $1.81$\small{$\times 10^{-5}$} & $3.84$\small{$\times 10^{-6}$} & $8.75$\small{$\times 10^{-6}$}\\
+			Topology* & $3.23$\small{$\times 10^{-1}$} & $3.67$\small{$\times 10^{-1}$} & $7.70$\small{$\times 10^{-7}$} & $2.41$\small{$\times 10^{-6}$} & $2.90$\small{$\times 10^{-7}$} & $9.59$\small{$\times 10^{-7}$}\\
 		\end{tabular}
 	\end{center}
 	* See section \ref{ssec:TopologicalAnalysis}
@@ -362,10 +362,10 @@ background events analyzed with both chosen voxel sizes.  In this case, the dist
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale = 0.49]{fig/blobcuts_bb0nu_10x10x5_E1vsE2.png}
-	\includegraphics[scale = 0.49]{fig/blobcuts_Tl208_10x10x5_E1vsE2.png}	
-	\includegraphics[scale = 0.45]{fig/blobcuts_bb0nu_2x2x2_E1vsE2.png}
-	\includegraphics[scale = 0.45]{fig/blobcuts_Tl208_2x2x2_E1vsE2.png}
+	\includegraphics[scale = 0.35]{fig/blob1vsblob2_Paolina10105_0vbb.pdf}
+	\includegraphics[scale = 0.35]{fig/blob1vsblob2_Paolina10105_Bi214.pdf}	
+	\includegraphics[scale = 0.35]{fig/blob1vsblob2_Paolina222_0vbb.pdf}
+	\includegraphics[scale = 0.35]{fig/blob1vsblob2_Paolina222_Bi214.pdf}
 	\caption{Computed blob energies $E_{b,1}$ vs. $E_{b,2}$ for signal (left) and $^{208}$Tl background (right) events with 10 x 10 x 5 mm$^3$ voxelization (above) and 2 x 2 x 2 mm$^3$ voxelization (below).  The blob radius chosen was $r_b = 18$ mm for the 10 x 10 x 5 mm$^3$~ voxelization and $r_b = 15$ mm for the 2 x 2 x 2 mm$^3$~ voxelization.} \label{fig.blobcuts}
 \end{figure}
 
@@ -413,7 +413,7 @@ schematic).
 In this initial study, we make use of the GoogLeNet \cite{Googlenet}, which is a sophisticated 22-layers-deep convolutional network designed for image recognition.  As GoogLeNet was
 designed to classify and identify a wide range of features in a full-color images, a more suitable network is likely to exist for our specific problem of classifying particle tracks based on
 topology.  While further exploration of DNN architecture is essential to understanding the problem fully, our main goal in this study will be to show that DNNs can ``learn'' to classify 
-NEXT events as signal or background better than previously developed conventional analysis methods.
+NEXT events as signal or background potentially better than previously developed conventional analysis methods.
 
 \section{Event classification with a DNN}
 
