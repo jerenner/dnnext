@@ -392,12 +392,17 @@ Because the output layer of the DNN gives a probability that a given event is si
 chosen for determining whether an event is classified as signal or background.  It can be simply chosen as 50\%, meaning the category with greatest probability is the classification of the
 event, or it can be varied to reject further background at the expense of signal efficiency.  Figure \ref{fig_svsb} shows the corresponding pairs of signal efficiency and background 
 rejection produced by variation of this threshold, while for the values reported in table \ref{tbl.DNNcomparison} the threshold was chosen such that the signal efficiency matched that reported in 
-the conventional analysis.
+the conventional analysis.  Note that to optimize the sensitivity to $0\nu\beta\beta$ decay, one would seek to maximize the ratio of signal events detected divided by the square root of 
+background events accepted (see ).  Thus we define a figure of merit $F = n_s/\sqrt{n_b}$, where $s$ and $b$ are the fractions of signal and background events accepted.  This quantity is 
+shown alongside the plot of signal efficiency vs. background rejection in Fig. \ref{fig_svsb}.  In table \ref{tbl.DNNcomparison} we reported the values of background rejection corresponding to
+the signal efficiencies studied in the classical analysis, though these did not optimize the figure of merit.  For optimal figures of merit, we would have signal efficiency of 69.0\% (62.5\%) and 
+background acceptance of 2.5\% (5.8\%) for 2x2x2 mm$^3$ (10x10x5 mm$^3$) voxels.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.6]{fig/sigvsbg_DNN.pdf}
-	\caption{\label{fig_svsb}Signal efficiency vs. background rejection for DNN analysis of voxelized (2x2x2 and 10x10x5 cubic mm), single-track NEXT-100 Monte Carlo events.}
+	\includegraphics[scale=0.7]{fig/sigvsbg_DNN.pdf}
+	\caption{\label{fig_svsb}Signal efficiency vs. background rejection for DNN analysis of voxelized (2x2x2 and 10x10x5 cubic mm), single-track NEXT-100 Monte Carlo events.  The figure of
+		merit $F$ to be maximized in an optimal $0\nu\beta\beta$ search is also shown as a function of background rejection.}
 \end{figure}
 
 \subsection{Evaluating the DNN analysis}\label{ssec:DNNeval}
