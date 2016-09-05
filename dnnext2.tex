@@ -232,10 +232,9 @@ NEXUS \cite{MartinAlbo_thesis}, the  GEANT4-based \cite{GEANT4} Monte Carlo simu
 
 The simulation begins by generating a large number of signal and background events. \bbonu\ events, 2 electrons with momenta generated according to a distribution calculated by the DECAY0 code \cite{Ponkratenko_2000} for $0\nu\beta\beta$, are randomly created throughout the active region of the detector, while the leading background events --- gamma rays of energies 2.447 MeV and 2.614 MeV corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl, respectively (see \cite{Martin-Albo:2015rhw} for a thorough discussion) --- are shot from several different regions (e.g, energy and tracking plane, detector vessel, etc.) within the detector geometry.  The resulting locations and magnitudes of the energy depositions in the active volume are recorded as ``true hits''. To speed up the propagation of the tracks, a minimum step size of 1 mm is used in NEXUS.
 
-The fast-simulation approach to producing reconstructed objects, starting from the true hits, takes into account the energy and spatial resolution. The former is introduced by simply smearing the total energy deposited by the event by the expected NEXT-100 resolution (we assume, conservatively, 0.7\% FWHM at \Qbb); the latter, by combining the resolution associated with the pixel pitch, the EL width and the diffusion into the voxel size. Thus, to emulate the response of NEXT-100 operating with pure xenon, the true hits are replaced by voxels of $10 \times 10 \times 5 \mathrm{~mm^3}$. The response of NEXT-100 under conditions of low diffusion is emulated by replacing the true hits by voxels of $2 \times 2 \times 2 \mathrm{~mm^3}$. Comparison between data and Monte Carlo in \cite{NEXT_topology} showed that choosing a voxel size of the same order as the maximum spread due to diffusion results in an acceptable (although somewhat conservative) simulation of the detector response. 
-%We have therefore considered a third case, with voxels of $5 \times 5 \times 3 \mathrm{~mm^3}$, which may be regarded as an optimistic emulation of the response of NEXT-100 with pure xenon, or a conservative simulation of the response with low-diffusion mixtures. 
+The fast-simulation approach to producing reconstructed objects, starting from the true hits, takes into account the energy and spatial resolution. The former is introduced by simply smearing the total energy deposited by the event by the expected NEXT-100 resolution (we assume, conservatively, 0.7\% FWHM at \Qbb); the latter, by combining the resolution associated with the pixel pitch, the EL width and the diffusion into the voxel size. Thus, to emulate the response of NEXT-100 operating with pure xenon, the true hits are replaced by voxels of $10 \times 10 \times 5 \mathrm{~mm^3}$. Comparison between fast and full simulation results in \cite{NEXT_topology}, with a similar voxel size of $10 \times 10 \times 10 \mathrm{mm^3}$ as used here, showed that the efficiencies obtained for the classification cut (see section \ref{ssec:ClassificationAnalysis}) are in agreement within 5\%. These efficiency results are also in agreement with the measured value. For this reason, we believe that a voxelization of size $10 \times 10 \times 5 \mathrm{mm^3}$ is a good proxy to capture all spatial resolution effects in a pure xenon detector with tens of centimeters of drift. As no similar comparison has been done under conditions of lower diffusion, we choose a voxel size of $2 \times 2 \times 2 \mathrm{~mm^3}$, the same order as the maximum spread due to diffusion, to emulate the response of NEXT-100.
 
-Note that the procedure of smearing the position of the true hits by some gaussian error, common in the fast-simulation of many experiments, does not work well here, since the concept of ``point resolution'' is not well defined in an HPXe-EL TPC, due to the effects already discussed (light spread in the EL gap and diffusion) combined with the twisted shape of the track. The fact that, for any given time slice, the tracking plane is receiving light from the portion of the track inside the EL grid, which in turn contains ionization electrons from several points of the track (due to diffusion), can be better captured by replacing each true hit by a voxel chosen to integrate the typical size of the above effects rather than by a ``smeared hit''. This is also the case when working with reconstructed data in an HPXe-EL TPC. As discussed above, the hits produced by the tracking plane must be replaced by voxels in order to produce a connected track. 
+%Note that the procedure of smearing the position of the true hits by some gaussian error, common in the fast-simulation of many experiments, does not work well here, since the concept of ``point resolution'' is not well defined in an HPXe-EL TPC, due to the effects already discussed (light spread in the EL gap and diffusion) combined with the twisted shape of the track. The fact that, for any given time slice, the tracking plane is receiving light from the portion of the track inside the EL grid, which in turn contains ionization electrons from several points of the track (due to diffusion), can be better captured by replacing each true hit by a voxel chosen to integrate the typical size of the above effects rather than by a ``smeared hit''. This is also the case when working with reconstructed data in an HPXe-EL TPC. As discussed above, the hits produced by the tracking plane must be replaced by voxels in order to produce a connected track. 
 
 \section{The topological signature}
 \label{sec.top}
@@ -401,13 +400,21 @@ the ratio of signal events detected divided by the square root of background eve
 $b$ are the fractions of signal and background events accepted.  
 This quantity is shown alongside the plot of signal efficiency vs. background rejection in Fig. \ref{fig_svsb}.  In table \ref{tbl.DNNcomparison} we reported the values of background rejection 
 corresponding to the signal efficiencies studied in the classical analysis, though these did not optimize the figure of merit.  For optimal figures of merit, we would have signal efficiency of 
-69.0\% (66.7\%) and background acceptance of 2.5\% (6.6\%) for 2x2x2 mm$^3$ (10x10x5 mm$^3$) voxels.
+69.0\% (66.7\%) and background acceptance of 2.5\% (6.6\%) for $2 \times 2 \times 2$ mm$^3$ (10x10x5 mm$^3$) voxels.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.7]{fig/sigvsbg_DNN.pdf}
-	\caption{\label{fig_svsb}Signal efficiency vs. background rejection for DNN analysis of voxelized (2x2x2 and 10x10x5 cubic mm), single-track NEXT-100 Monte Carlo events.  The figure of
+	\includegraphics[scale=0.6]{fig/sigvsbg_DNN.pdf}
+	\caption{\label{fig_svsb}Signal efficiency vs. background rejection for DNN analysis of voxelized ($2 \times 2 \times 2$ and $10 \times 10 \times 5$ cubic mm), single-track NEXT-100 Monte Carlo events.  The figure of
 		merit $F$ to be maximized in an optimal $0\nu\beta\beta$ search is also shown as a function of background rejection.}
+\end{figure}
+
+The improvements realized in using the DNN-based analysis combined with lower diffusion translate to significant gains in half-life sensitivity.  Figure \ref{fig.halflife} shows the sensitivity at 90\% confidence level calculated using the Feldman-Cousins \cite{Feldman_1998} perscription as in \cite{NEXT_sensitivity} for the NEXT-100 conventional analysis, for NEXT-100 in the case of low-diffusion ($2 \times 2 \times 2$ mm$^3$ voxels) and using the DNN-based classification with optimal figure of merit, and for a ton-scale NEXT TPC with improved energy resolution (0.5\% FWHM at $Q_{\beta\beta}$ as opposed to 0.75\% FWHM) and assuming low-diffusion and an additional factor of 2 in background rejection.  The substantial improvements realizable show the advantages of both an improved DNN-based analysis and achieving low diffusion in NEXT.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.8]{fig/half_life_sensitivity.png}
+	\caption{\label{fig.halflife}Sensitivity to the half-life $T^{0\nu\beta\beta}_{1/2}$ calculated using the Feldman-Cousins approach.  The curves describe the NEXT-100 conventional analysis \cite{NEXT_sensitivity} (blue), NEXT-100 with the improved DNN-based analysis with optimal figure of merit and low diffusion (red), and a best-case ton-scale NEXT TPC assuming a factor of 2 improvement in background rejection over the DNN analysis with optimal figure of merit and an improvement in energy resolution from 0.75\% FWHM at $Q_{\beta\beta}$ to 0.5\% FWHM (black).}
 \end{figure}
 
 \subsection{Evaluating the DNN analysis}\label{ssec:DNNeval}
@@ -440,18 +447,12 @@ that used in the NEXT-100 Monte Carlo, the DNN classified events
 with similar accuracy as before.  Disabling bremsstrahlung seemed to have little effect on the accuracy.  Disabling fluctuations of continuous energy losses in GEANT had some small 
 effect (approx. 1\% increase in accuracy), and disabling the production of secondaries (disallowing the production of secondaries with a range of less than 20 cm) had a more 
 significant effect (approx. 2.5\% increase in accuracy), though still did not yield accuracy similar to that of the toy MC datasets.  It was found that disabling both continuous energy fluctuations 
-and the production of secondaries gave accuracies similar to that of the toy MC events (about 98\%).  A summary of the Monte Carlo simulations run and the classification accuracies obtained is 
-given in table \ref{tbl.DNNsummary}.
+and the production of secondaries gave accuracies similar to that of the toy MC events (about 98\%).  A summary of the key Monte Carlo simulations run and the classification accuracies 
+obtained is given in table \ref{tbl.DNNsummary}.
 
-Let us assume for a moment that the DNN is perfectly capable of taking into account all physical information available in an event, and therefore if it misclassifies an event, it is because some
-aspect of the physics of its production has caused it to project the physical image of an event from the incorrect category (signal or background).  Then our previous observations reveal what can cause a signal event to look like background and vice versa.  With ``ideal'' tracks produced according to the mean $dE/dx$ curve, the statistical possibilities that one type of event produces a track that resembles the majority of those of the other type are few.  Increasing multiple scattering and adding the realistic distribution of $0\nu\beta\beta$ event energies allows for more possibilities, for example signal events which appear to be backgrounds because one of the product electrons contains very little energy.  
+There are two possible scenarios which explain why a DNN misclassifies a particular event. In the first one, the DNN is perfectly capable of taking into account all physical information available in an event but some aspects of the physics of its production have caused it to project the image of an event from the incorrect category (signal or background), given the present detector position and energy resolution. This is, for instance, the case when in a $0\nu\beta\beta$ event one of the electrons contains very little energy, and thus it physically resembles a single electron. Likewise, a background event in which a large secondary is produced early on in the production of the single-electron track can look like a two-electron double-beta event.
 
-Adding the physics of secondary production but not including continuous energy fluctuations is somewhat deceiving, as energy fluctuations are still present in the simulated energies of the secondaries.  In this case, a background event in which a large secondary is produced early on in the production of the single-electron track can look like a two-electron double-beta event, and such an effect seems to be responsible for a significant number of inaccurate classifications.   After also including production of secondaries and continuous energy fluctuations, we see a classification accuracy indicative of a more significant number of statistical possibilities that a true background event could disguise itself as a signal event or vice versa.
-
-Perhaps, however, it is not the case that the DNN is capable of learning enough information to classify events perfectly, given that their physical signatures do not overlap.  It may actually be that
-as we introduce more physical effects, the problem becomes more complicated, and the present DNN is simply not capable of learning enough information to separate the two types of events, although it is physically possible.  This is more difficult to understand considering some effects rather than others.   
-
-For example, when considering multiple scattering and energy fluctuations, one must ask just how contorted does a background event need to be, and in what ways does it need to be contorted, to make it look more like a signal event?  This question may only be answered by studying individual events or constructing more complex DNNs until no further improvement appears possible.  However, it is quite clear in the case of the realistic double-beta electron energy distribution that if one electron of the two is only given 10 keV energy, for the present detector position and energy resolution, the event will be physically indistinguishable from a background event regardless of how complex the DNN used.  It is likely then, since the DNN was capable of yielding near-100\% accuracy for events of the toy MC, that in the cases in which the DNN is failing the events physically appear to be of the wrong type.
+However, it may well be that the present DNN is simply not capable of learning enough information to separate the two types of events, although it is physically possible. This is more difficult to understand by introducing physical effects one at a time. Rather, one should study individual events or construct more complex DNNs until no further improvement appears possible.
 
 \begin{table}[!t]
 	\begin{center}
@@ -465,11 +466,11 @@ For example, when considering multiple scattering and energy fluctuations, one m
 			\multicolumn{2}{r}{Toy MC, ideal} & 99.8\\
 			\multicolumn{2}{r}{Toy MC, realistic \bbonu\,distribution} & 98.9\\
 			\multicolumn{2}{r}{Xe box GEANT4, no secondaries, no E-fluctuations} & 98.3\\
-			\multicolumn{2}{r}{Xe box GEANT4, no secondaries, no E-fluctuations, no brem.} & 98.3\\
-			\multicolumn{2}{r}{Toy MC, realistic \bbonu\,distribution, double multiple scattering} & 97.8\\
+			%\multicolumn{2}{r}{Xe box GEANT4, no secondaries, no E-fluctuations, no brem.} & 98.3\\
+			%\multicolumn{2}{r}{Toy MC, realistic \bbonu\,distribution, double multiple scattering} & 97.8\\
 			\multicolumn{2}{r}{Xe box GEANT4, no secondaries} & 94.6\\
 			\multicolumn{2}{r}{Xe box GEANT4, no E-fluctuations} & 93.0\\
-			\multicolumn{2}{r}{Xe box, no brem.} & 92.4\\
+			%\multicolumn{2}{r}{Xe box, no brem.} & 92.4\\
 			\multicolumn{2}{r}{Xe box, all physics} & 92.1\\
 			\multicolumn{2}{r}{NEXT-100 GEANT4} & 91.6\\
 			\textbf{10x10x5 voxels} & & \\
