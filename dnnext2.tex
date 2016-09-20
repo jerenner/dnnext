@@ -31,7 +31,6 @@
 \author[c]{L.M.P.~Fernandes,}
 \author[h]{A.L.~Ferreira,}
 \author[c]{E.D.C.~Freitas,}
-%\author[e]{V.M.~Gehman,}
 \author[e]{A.~Goldschmidt,}
 \author[q]{D.~Gonz\'{a}lez-D\'{i}az,}
 \author[i]{R.M.~Guti\'{e}rrez,}
@@ -47,13 +46,10 @@
 \author[a]{N.~L\'{o}pez-March,}
 \author[a]{D.~Lorca,}
 \author[i]{M.~Losada,}
-%\author[f]{A.~Mar\'{i},}
-%\author[e]{T.~Miller,}
 \author[r]{J.~Mart\'{i}n-Albo,}
 \author[k]{G.~Mart\'{i}nez-Lema,}
 \author[a]{A.~Mart\'{i}nez,}
 \author[a]{F.~Monrabal,}
-%\author[a]{M.~Monserrate,}
 \author[c]{C.M.B.~Monteiro,}
 \author[f]{F.J.~Mora,}
 \author[h]{L.M.~Moutinho,}
@@ -61,8 +57,7 @@
 \author[a]{P.~Novella,}
 \author[b,2]{D.~Nygren,}
 \author[p]{A.~Para,}
-%\author[m]{J.L.~P\'{e}rez-Aparicio,}
-%\author[l]{J.~P\'{e}rez,}
+\author[l]{J.~P\'{e}rez,}
 \author[a]{M.~Querol,}
 \author[n]{L.~Ripoll,}
 \author[a]{J.~Rodr\'{i}guez,}
@@ -73,12 +68,10 @@
 \author[a]{A.~Sim\'{o}n,}
 \author[o]{C.~Sofka,}
 \author[a]{M.~Sorel,}
-%\author[o]{T.~Stiegler,}
 \author[f]{J.F.~Toledo,}
 \author[n]{J.~Torrent,}
 \author[g]{Z.~Tsamalaidze,}
 \author[h]{J.F.C.A.~Veloso,}
-%\author[d]{J.A.~Villar,}
 \author[o,3]{J.~White,\note{Deceased.}}
 \author[o]{R.~Webb,}
 \author[a]{N.~Yahlali,}
@@ -157,12 +150,12 @@ matrix element and a phase-space integral, both of
 which can be calculated to some uncertainty, and the square of the effective neutrino mass $|m_{\beta\beta}|^2 = |\sum_{i=e,\nu,\tau}U_{ei}^2m_{i}|^2$ which is a combination of the neutrino
 masses $m_{i}$ and neutrino mixing matrix elements $U_{ei}$.  The lifetime is of the order of $10^{25}-10^{26}$~years for a degenerate neutrino mass hierarchy ($m_1 \sim m_2 \sim m_3$), $10^{26}-10^{27}$~years for an inverted 
 neutrino mass hierarchy ($m_3 \ll m_1 < m_2$), and longer than $10^{27}$~years  for a normal mass hierarchy ($m_1 < m_2 \ll m_3$).  Experiments of the current generation deploy approximately
-100 kg of the candidate isotope and are subject to several tens of counts per year of background events in their region of interest of energy selection near $Q_{\beta\beta}$ \cite{GomezCadenas:2013ue}.  These experiments
-will be capable of probing only the parameter space corresponding to the degenerate mass hierarchy, perhaps pushing into the inverted hierarchy.  In order to completely cover the parameter 
+100 kg of the candidate isotope and are subject to several tens of counts per year of background events in their region of interest (ROI) of energy selection near $Q_{\beta\beta}$ \cite{GomezCadenas:2013ue}.  These experiments
+will be capable of probing only the parameter space corresponding to the degenerate mass hierarchy, perhaps pushing into the inverted hierarchy.  The most sensitive lower bound to date was set by the KamLAND-Zen experiment with $^{136}$Xe, at $T_{1/2}^{0\nu} > 1.06 \times 10^{26}$ years \cite{KamLANDZen_2016}. In order to completely cover the parameter 
 space of the inverted mass hierarchy, experiments employing candidate isotope masses at the tonne-scale with background rates of (at most) a few counts per tonne-year will be required  \cite{Gomez-Cadenas:2015twa}.  
 
 One of the technologies currently being developed is that of high pressure xenon (HPXe) Time Projection Chambers (TPCs). In particular, the NEXT collaboration is building a HPXe TPC capable of 
-holding 100 kg of xenon enriched at 90\% in the \bb\ decaying isotope \XE \cite{NEXT_sensitivity}. This detector, called NEXT-100, will operate at 15 bar and use electroluminescent 
+containing a total mass of 100 kg of xenon enriched at 90\% in the \bb\ decaying isotope \XE \cite{NEXT_sensitivity}. This detector, called NEXT-100, will operate at 15 bar and use electroluminescent 
 (EL) amplification of the ionization signal to optimize energy resolution. The detection of EL light provides an energy measurement using 60 photomultipliers (PMTs) located behind the cathode 
 (the \emph{energy plane}) as well as 
 tracking via a dense array of about 8,000 silicon photomultipliers (SiPMs) located behind the anode (the \emph{tracking plane}).
@@ -183,7 +176,7 @@ A central feature of a HPXe TPC is the capability of imaging electron tracks pro
 \begin{figure}[!htb]
 \centering
 \includegraphics[width= 0.95\textwidth]{fig/nextEL.pdf}
-\caption{Principle of operation of an asymmetric HPXe TPC with EL readout.} \label{fig.SS}
+\caption{Principle of operation of an asymmetric HPXe TPC with EL readout.  (Figure from \cite{Alvarez:2013gxa}.)} \label{fig.SS}
 \end{figure}
 
 Figure \ref{fig.SS} shows the principle of operation of an asymmetric HPXe TPC using proportional electroluminescent (EL) amplification of the ionization signal (as is the case for NEXT-100). The detection process involves the use of the prompt scintillation light ($S_1$) from the gas as the start-of-event time, and the drift of the ionization charge to the anode by means of an electric field ($\sim0.3$ kV/cm at 15 bar) where secondary EL scintillation ($S_2$) is produced in a narrow region defined by a highly transparent mesh and a quartz plate coated with ITO (indium tin oxide) and TPB (tetraphenyl butadiene), called the EL gap.  High voltages are applied to the two meshes to establish an electric field of $\sim 20$ kV/cm at 15 bar in this region. The detection of EL light provides an energy measurement using PMTs in the case of NEXT-100 located behind the cathode (the \emph{energy plane}). The reconstruction of the track topology is carried out with a dense array of SiPMs located behind the anode (the \emph{tracking plane}). The $x$-$y$~coordinates are found using the information provided by the tracking plane, while $z$~is determined by the drift time between the detection of $S_1$~and $S_2$. For each reconstructed spatial point, the detector also measures the energy deposited. Thus, the track is imaged as a collection of hits, and each hit is defined by a 3D space coordinate and by an associated energy deposition, as $(x, y, z, E)$.
@@ -211,7 +204,7 @@ Electrons (and positrons) moving through xenon gas lose energy at an approximate
 Reconstruction of tracks in an electroluminescent HPXe TPC is complicated by the diffusion of the charge cloud during drift and also by the nature of the read-out. Scintillation light is produced over the whole width of the EL gap (5 mm in NEXT-100) spreading the signal from a single electron over a time inversely proportional to the drift velocity within the gap ($\sim$ 2 $\mu$s). Additionally, the EL light is produced isotropically and, therefore, the signal produced by the passage of an electron through the gap is expected to arrive at the tracking plane ($\sim$ several mm behind the anode) over the area defined by the intersection of the plane with the sphere of light.
 
 In a previous paper \cite{Lorca:2014sra}, the NEXT collaboration demonstrated that a ``point-like''
-deposition of charge due to the absorption of a point-like source (such as the xenon K$_\alpha$ X-rays) can be parameterised as a two dimensional Gaussian with a standard deviation of $\sim$ 8 mm where the spread due to EL light production is the dominant effect with subdominant contributions from transverse diffusion of the charge. Longitudinally, the expected spread has a noticeable dependence on the drift distance since the diffusion dominates. K$_\alpha$ events are expected to have widths in $z$ with standard deviations of between 0.5 mm, for very short drifts, to about 5 mm for the longest drifts. In order to optimise the reconstruction of tracks these values must be taken into account by dividing the signal information into appropriate time slices and using charge information from clustered SiPM channels.
+deposition of charge due to the absorption of a point-like source (such as the xenon K$_\alpha$ X-rays) can be parameterised as a two dimensional Gaussian with a standard deviation of $\sim$ 8 mm where the spread due to EL light production is the dominant effect with subdominant contributions from transverse diffusion of the charge. As discussed below, the resolution with which we can reconstruct the centroid of this optical spread function is significantly better than this. Longitudinally, the expected spread has a noticeable dependence on the drift distance since the diffusion dominates. K$_\alpha$ events are expected to have widths in $z$ with standard deviations of between 0.5 mm, for very short drifts, to about 5 mm for the longest drifts. In order to optimise the reconstruction of tracks these values must be taken into account by dividing the signal information into appropriate time slices and using charge information from clustered SiPM channels.
 
 The standard NEXT algorithm searches for clusters around local maxima and then proceeds iteratively, selecting first the channel with maximum charge and forming a cluster with the first ring of sensors around it. The cluster information is then used to build a hit, whose $x$ and $y$ position are reconstructed as the barycentre of the charge information. 
 
@@ -222,7 +215,7 @@ $10 \times 10 \times 10 \mathrm{~mm^3}$. The analysis described in \cite{NEXT_se
 of similar size ($10 \times 10 \times 5 \mathrm{~mm^3}$).  Improvements in the hit-finder algorithm (or the use of alternative methods such as DNNs) may allow, in principle, for smaller voxels. However, the size of the voxel also reflects the effect of the spatial resolution, which in turn depends on: 
 
 \begin{enumerate}
-\item {\em Tracking plane design:} this includes the pitch of the SiPMs in the tracking plane as well as the SiPM response. Indeed, the use of SiPMs with very low dark current and high gain allows one to determine the location of an event by weighting the position of each sensor with the light recorded, thus improving dramatically the ``digital'' resolution, which goes as $\sim$pitch/$\sqrt{12}$. The digital point resolution corresponding to a pitch of 10 mm (NEXT-100) is 10$/\sqrt{12} \sim 3$~mm. Using weighted information (e.g, local barycenter algorithms), the point resolution improves to about 1 mm (see \cite{Lorca:2014sra}). 
+\item {\em Tracking plane segmentation:} this includes the pitch of the SiPMs in the tracking plane as well as the SiPM response. Indeed, the use of SiPMs with very low dark current and high gain allows one to determine the location of an event by weighting the position of each sensor with the light recorded, thus improving dramatically the ``digital'' resolution, which goes as $\sim$pitch/$\sqrt{12}$. The digital point resolution corresponding to a pitch of 10 mm (NEXT-100) is 10$/\sqrt{12} \sim 3$~mm. Using weighted information (e.g, local barycenter algorithms), the point resolution improves to about 1 mm (see \cite{Lorca:2014sra}). 
 \item {\em The width of the EL region:}
 The non-zero width of the EL gap adds an extra resolution term in the $z$~coordinate which goes like $w/\sqrt{12}$~where $w$~is the width of the grid. For the NEXT-100 detector, $w\sim 5$ mm, resulting also in a resolution of about 1.5 mm. At the same time, the non-negligible distance (several mm) between the gate grid (the plane that defines the beginning of the EL region) and the sensors in the tracking plane, spreads the signal of a single electron over several SiPMs. The light distribution is Gaussian and a fit to the profile recovers the position of the ionization electron.
 \item {\em Diffusion of the drifting electron cloud:} both transverse and longitudinal diffusion are high in pure xenon (of the order of 10 and 5 mm/$\sqrt{\rm{m}}$, respectively). On the other hand, work in progress within the NEXT collaboration \cite{Azevedo:2015eok} suggests that adding small amounts of cooling gases such as \CHF\ or \CFF\ to pure xenon (at the level of 0.1 \% of \CHF\ or 0.01\% of \CFF) reduces both transverse and longitudinal diffusion to some $2.0$~mm/$\sqrt{\rm{m}}$. This is one of the most important upgrades under study for the second phase of NEXT-100. 
@@ -231,9 +224,9 @@ The non-zero width of the EL gap adds an extra resolution term in the $z$~coordi
 \section{Monte Carlo Simulation}\label{sec.MC}
 NEXUS \cite{MartinAlbo_thesis}, the  Geant4-based \cite{GEANT4} Monte Carlo simulation of the NEXT experiment, permits an accurate modelling of the detector geometry and provides the tools to carry out both full and fast simulations of the apparatus response. A fast simulation has been chosen for this study, given the need to generate a very large number of events for the detailed physics studies presented here, as well as for the training of the DNNs.
 
-The simulation begins by generating a large number of signal and background events. Neutrinoless double beta events, 2 electrons with momenta generated according to a distribution calculated by the DECAY0 code \cite{Ponkratenko_2000} for $0\nu\beta\beta$ decay, are randomly created throughout the active region of the detector, while the leading background events --- gamma rays of energies 2.447 MeV and 2.614 MeV corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl, respectively (see \cite{NEXT_sensitivity} for a thorough discussion) --- are shot from several different regions (e.g, energy and tracking plane, detector vessel, etc.) within the detector geometry.  The resulting locations and magnitudes of the energy depositions in the active volume are recorded as ``true hits''.  A minimum step size of 1 mm is used in NEXUS.
+The simulation begins by generating a large number of signal and background events. Neutrinoless double beta events, 2 electrons with momenta generated according to a distribution calculated by the DECAY0 code \cite{Ponkratenko_2000} for $0\nu\beta\beta$ decay, are randomly created throughout the active region of the detector, while the leading background events --- gamma rays of energies 2.447 MeV and 2.614 MeV corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl, respectively (see \cite{NEXT_sensitivity} for a thorough discussion) --- are shot from the field cage of the detector geometry.  The resulting locations and magnitudes of the energy depositions in the active volume are recorded as ``true hits''.  A minimum step size of 1 mm is used in NEXUS.
 
-The fast-simulation approach to producing reconstructed objects, starting from the true hits, takes into account the energy and spatial resolution. The former is introduced by simply smearing the total energy deposited by the event by the expected NEXT-100 resolution (we assume, conservatively, 0.7\% FWHM at \Qbb); the latter, by combining the resolution associated with the pixel pitch, the EL width and the diffusion into the voxel size. Thus, to emulate the response of NEXT-100 operating with pure xenon, the true hits are replaced by voxels of $10 \times 10 \times 5 \mathrm{~mm^3}$. Comparison between fast and full simulation results in \cite{NEXT_topology}, with a similar voxel size of $10 \times 10 \times 10 \mathrm{mm^3}$ as used here, showed that the efficiencies obtained for the classification cut (see section \ref{ssec:ClassificationAnalysis}) are in agreement within 5\%. These efficiency results are also in agreement with the measured value. For this reason, we believe that a voxelization of size $10 \times 10 \times 5 \mathrm{mm^3}$ is a good proxy to capture all spatial resolution effects in a pure xenon detector with tens of centimeters of drift. As no similar comparison has been done under conditions of lower diffusion, we choose a voxel size of $2 \times 2 \times 2 \mathrm{~mm^3}$, the same order as the maximum spread due to diffusion, to emulate the response of NEXT-100.
+The fast-simulation approach to producing reconstructed objects, starting from the true hits, takes into account the energy and spatial resolution. The former is introduced by simply smearing the total energy deposited by the event by the expected NEXT-100 resolution (we assume, conservatively, 0.7\% FWHM at \Qbb); the latter, by combining the resolution associated with the pixel pitch, the EL width and the diffusion into the voxel size. Thus, to emulate the response of NEXT-100 operating with pure xenon, the true hits are replaced by voxels of $10 \times 10 \times 5 \mathrm{~mm^3}$. Comparison between fast and full simulation results in \cite{NEXT_topology}, with a similar voxel size of $10 \times 10 \times 10 \mathrm{mm^3}$ as used here, showed that the efficiencies obtained for the classification cut (see section \ref{ssec:ClassificationAnalysis}) are in agreement within 5\%. These efficiency results are also in agreement with the measured value. For this reason, we believe that a voxelization of size $10 \times 10 \times 5 \, \mathrm{mm^3}$ is a good proxy to capture all spatial resolution effects in a pure xenon detector with tens of centimeters of drift. In addition, we consider an optimistic scenario of $2 \times 2 \times 2 \, \mathrm{mm^3}$ voxels. Spatial resolution studies using full simulation and reconstruction have also been performed with the baseline NEXT-100 EL region and tracking plane design, based on a 1 cm pitch between SiPMs and an EL gap of 5 mm, and single-point spatial resolutions of order 1 mm have been obtained in this case. This is comparable with the single-point resolution introduced by 3D voxels of size 2 mm, given by $2\sqrt{3} / \sqrt{12}$ mm = 1 mm.
 
 %Note that the procedure of smearing the position of the true hits by some Gaussian error, common in the fast-simulation of many experiments, does not work well here, since the concept of ``point resolution'' is not well defined in an HPXe-EL TPC, due to the effects already discussed (light spread in the EL gap and diffusion) combined with the twisted shape of the track. The fact that, for any given time slice, the tracking plane is receiving light from the portion of the track inside the EL grid, which in turn contains ionization electrons from several points of the track (due to diffusion), can be better captured by replacing each true hit by a voxel chosen to integrate the typical size of the above effects rather than by a ``smeared hit''. This is also the case when working with reconstructed data in an HPXe-EL TPC. As discussed above, the hits produced by the tracking plane must be replaced by voxels in order to produce a connected track. 
 
@@ -251,7 +244,7 @@ The fast-simulation approach to producing reconstructed objects, starting from t
 \end{enumerate}
 
 %%%%
-Table \ref{tbl.FastAnalysisResults} shows how the set of cuts described above reduces the signal and the primary backgrounds for Monte Carlo generated events with voxel sizes of $2 \times 2 \times 2 \mathrm{~mm^3}$ and $10 \times 10 \times 5 \mathrm{~mm^3}$ (events were generated originating from the field cage surrounding the active region of the detector).  Notice that, in order to characterize the rejection power of the topological signature, a relatively large energy window of 100 keV around \Qbb\ is used. The total rejection power of NEXT will be the combination of the rejection power achieved by the pre-selection (cuts 1-2 above), the topological cuts (cut 3 above and the classification cut, discussed in more detail below), and a final, stricter energy cut that accepts events in a relatively narrow region of interest (ROI) around \Qbb. See \cite{NEXT_sensitivity} for a detailed discussion.
+Table \ref{tbl.FastAnalysisResults} shows how the set of cuts described above reduces the signal and the primary backgrounds for Monte Carlo generated events with voxel sizes of $2 \times 2 \times 2 \mathrm{~mm^3}$ and $10 \times 10 \times 5 \mathrm{~mm^3}$ (events were generated originating from the field cage surrounding the active region of the detector).  Notice that, in order to characterize the rejection power of the topological signature, a relatively large energy window of 100 keV around \Qbb\ is used. The total rejection power of NEXT will be the combination of the rejection power achieved by the pre-selection (cuts 1-2 above), the topological cuts (cut 3 above and the classification cut, discussed in more detail below), and a final, stricter energy cut that accepts events in a relatively narrow ROI around \Qbb. See \cite{NEXT_sensitivity} for a detailed discussion.
 
 \begin{table}[!htb]
 	\begin{center}
@@ -411,12 +404,12 @@ corresponding to the signal efficiencies studied in the classical analysis, thou
 		merit $F$ to be maximized in an optimal $0\nu\beta\beta$ decay search is also shown as a function of background rejection.}
 \end{figure}
 
-The improvements realized in using the DNN-based analysis combined with lower diffusion translate to significant gains in half-life sensitivity.  Figure \ref{fig.halflife} shows the sensitivity at 90\% confidence level calculated using the Feldman-Cousins \cite{Feldman_1998} perscription as in \cite{NEXT_sensitivity} for the NEXT-100 conventional analysis, for NEXT-100 in the case of low-diffusion ($2 \times 2 \times 2$ mm$^3$ voxels) and using the DNN-based classification with optimal figure of merit, and for a tonne-scale NEXT TPC with improved energy resolution (0.5\% FWHM at $Q_{\beta\beta}$ as opposed to 0.75\% FWHM) and assuming low-diffusion and an additional factor of 2 in background rejection.  This additional factor of 2 was in addition to the improvements obtained through the DNN analysis and assuming low-diffusion, and was included to account for an improved self-shielding ability due to an increased ratio of volume to surface area at the enlarged scale.  The substantial improvements realizable show the advantages of both an improved DNN-based analysis and achieving low diffusion in NEXT.
+The improvements realized in using the DNN-based analysis combined with lower diffusion translate to significant gains in half-life sensitivity.  Figure \ref{fig.halflife} shows the sensitivity at 90\% confidence level calculated using the Feldman-Cousins \cite{Feldman_1998} perscription as in \cite{NEXT_sensitivity} for the NEXT-100 conventional analysis and for NEXT-100 in the case of low-diffusion ($2 \times 2 \times 2$ mm$^3$ voxels) and using the DNN-based classification with optimal figure of merit. The substantial improvements realizable show the advantages of both an improved DNN-based analysis and achieving low diffusion in NEXT.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.8]{fig/half_life_sensitivity.png}
-	\caption{\label{fig.halflife}Sensitivity to the half-life $T^{0\nu\beta\beta}_{1/2}$ calculated using the Feldman-Cousins approach.  The curves describe the NEXT-100 conventional analysis \cite{NEXT_sensitivity} (blue), NEXT-100 with the improved DNN-based analysis with optimal figure of merit and low diffusion (red), and a best-case tonne-scale NEXT TPC assuming a factor of 2 improvement in background rejection over the DNN analysis with optimal figure of merit (due to improved self-shielding) and an improvement in energy resolution from 0.75\% FWHM at $Q_{\beta\beta}$ to 0.5\% FWHM (black).}
+	\includegraphics[scale=0.55]{fig/half_life_sensitivity.pdf}
+	\caption{\label{fig.halflife}Sensitivity to the half-life $T^{0\nu\beta\beta}_{1/2}$ calculated using the Feldman-Cousins approach.  The curves describe the NEXT-100 conventional analysis \cite{NEXT_sensitivity} (blue) and NEXT-100 with the improved DNN-based analysis with optimal figure of merit and low diffusion (red).}
 \end{figure}
 
 \subsection{Evaluating the DNN analysis}\label{ssec:DNNeval}
