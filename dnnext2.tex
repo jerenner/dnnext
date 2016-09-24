@@ -226,7 +226,7 @@ NEXUS \cite{MartinAlbo_thesis}, the  Geant4-based \cite{GEANT4} Monte Carlo simu
 
 The simulation begins by generating a large number of signal and background events. Neutrinoless double beta events, 2 electrons with momenta generated according to a distribution calculated by the DECAY0 code \cite{Ponkratenko_2000} for $0\nu\beta\beta$ decay, are randomly created throughout the active region of the detector, while the leading background events --- gamma rays of energies 2.447 MeV and 2.614 MeV corresponding to gammas emitted by daughters of $^{214}$Bi and $^{208}$Tl, respectively (see \cite{NEXT_sensitivity} for a thorough discussion) --- are shot from the field cage of the detector geometry.  The resulting locations and magnitudes of the energy depositions in the active volume are recorded as ``true hits''.  A minimum step size of 1 mm is used in NEXUS.
 
-The fast-simulation approach to producing reconstructed objects, starting from the true hits, takes into account the energy and spatial resolution. The former is introduced by simply smearing the total energy deposited by the event by the expected NEXT-100 resolution (we assume, conservatively, 0.7\% FWHM at \Qbb); the latter, by combining the resolution associated with the pixel pitch, the EL width and the diffusion into the voxel size. Thus, to emulate the response of NEXT-100 operating with pure xenon, the true hits are replaced by voxels of $10 \times 10 \times 5 \mathrm{~mm^3}$. Comparison between fast and full simulation results in \cite{NEXT_topology}, with a similar voxel size of $10 \times 10 \times 10 \mathrm{mm^3}$ as used here, showed that the efficiencies obtained for the classification cut (see section \ref{ssec:ClassificationAnalysis}) are in agreement within 5\%. These efficiency results are also in agreement with the measured value. For this reason, we believe that a voxelization of size $10 \times 10 \times 5 \, \mathrm{mm^3}$ is a good proxy to capture all spatial resolution effects in a pure xenon detector with tens of centimeters of drift. In addition, we consider an optimistic scenario of $2 \times 2 \times 2 \, \mathrm{mm^3}$ voxels. Spatial resolution studies using full simulation and reconstruction have also been performed with the baseline NEXT-100 EL region and tracking plane design, based on a 1 cm pitch between SiPMs and an EL gap of 5 mm, and single-point spatial resolutions of order 1 mm have been obtained in this case. This is comparable with the single-point resolution introduced by 3D voxels of size 2 mm, given by $2\sqrt{3} / \sqrt{12}$ mm = 1 mm.
+The fast-simulation approach to producing reconstructed objects, starting from the true hits, takes into account the energy and spatial resolution. The former is introduced by simply smearing the total energy deposited by the event by the expected NEXT-100 resolution (we assume, conservatively, 0.7\% FWHM at \Qbb); the latter, by combining the resolution associated with the pixel pitch, the EL width and the diffusion into the voxel size. Thus, to emulate the response of NEXT-100 operating with pure xenon, the true hits are replaced by voxels of $10 \times 10 \times 5 \mathrm{~mm^3}$. Comparison between fast and full simulation results in \cite{NEXT_topology}, with a similar voxel size of $10 \times 10 \times 10 \mathrm{~mm^3}$ as used here, showed that the efficiencies obtained for the classification cut (see section \ref{ssec:ClassificationAnalysis}) are in agreement within 5\%. These efficiency results are also in agreement with the measured value. For this reason, we believe that a voxelization of size $10 \times 10 \times 5 \mathrm{~mm^3}$ is a good proxy to capture all spatial resolution effects in a pure xenon detector with tens of centimeters of drift. In addition, we consider an optimistic scenario of $2 \times 2 \times 2 \mathrm{~mm^3}$ voxels. Spatial resolution studies using full simulation and reconstruction have also been performed with the baseline NEXT-100 EL region and tracking plane design, based on a 1 cm pitch between SiPMs and an EL gap of 5 mm, and single-point spatial resolutions of order 1 mm have been obtained in this case. This is comparable with the single-point resolution introduced by 3D voxels of size 2 mm, given by $2\sqrt{3} / \sqrt{12}$ mm = 1 mm.
 
 %Note that the procedure of smearing the position of the true hits by some Gaussian error, common in the fast-simulation of many experiments, does not work well here, since the concept of ``point resolution'' is not well defined in an HPXe-EL TPC, due to the effects already discussed (light spread in the EL gap and diffusion) combined with the twisted shape of the track. The fact that, for any given time slice, the tracking plane is receiving light from the portion of the track inside the EL grid, which in turn contains ionization electrons from several points of the track (due to diffusion), can be better captured by replacing each true hit by a voxel chosen to integrate the typical size of the above effects rather than by a ``smeared hit''. This is also the case when working with reconstructed data in an HPXe-EL TPC. As discussed above, the hits produced by the tracking plane must be replaced by voxels in order to produce a connected track. 
 
@@ -281,15 +281,15 @@ $2 \times 2 \times 2 \mathrm{~mm^3}$ are shown in Figs. \ref{fig.exampleProjs101
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina10105_v10x10x5_r200x200x200_2_bg.png}
-	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina10105_v10x10x5_r200x200x200_3_si.png}
+	\includegraphics[scale=0.36]{fig/plt_h2D_dnn_NEXT100_Bi214_bg_v10x10x5_r200x200x200_6_bg.png}
+	\includegraphics[scale=0.36]{fig/plt_h2D_dnn_NEXT100_0vbb_si_v10x10x5_r200x200x200_6_si.png}
 	\caption{\label{fig.exampleProjs10105}Projections in xy, yz, and xz for an example background (above) and signal (below) event voxelized with $10 \times 10 \times 5$ mm$^3$ voxels.}
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina222_v2x2x2_r200x200x200_0_bg.png}
-	\includegraphics[scale=0.36]{fig/plt_h2D_vox_dnn3d_NEXT100_Paolina222_v2x2x2_r200x200x200_2_si.png}
+	\includegraphics[scale=0.36]{fig/plt_h2D_dnn_NEXT100_Bi214_bg_v2x2x2_r200x200x200_2_bg.png}
+	\includegraphics[scale=0.36]{fig/plt_h2D_dnn_NEXT100_0vbb_si_v2x2x2_r200x200x200_4_si.png}
 	\caption{\label{fig.exampleProjs222}Projections in xy, yz, and xz for an example background (above) and signal (below) event voxelized with $2 \times 2 \times 2$ mm$^3$ voxels.}
 \end{figure}
 
@@ -308,7 +308,7 @@ Finally we apply a cut designed to choose signal events with two blobs and elimi
 \section{Deep Learning}
 The use of artificial neural networks to solve complex problems has been explored since the 1940s.  In recent years, with the dramatic increase in available computing power, the use of computationally
 intense neural networks with many inner layers has become feasible.  These neural nets that are many layers deep, called deep neural networks (DNNs), are capable of learning large
-amounts of data exhitibing a vast array of features.  This idea of ``deep learning'' has been applied to yield outstanding performance in solving difficult problems such as image \cite{Googlenet} 
+amounts of data exhibiting a vast array of features.  This idea of ``deep learning'' has been applied to yield outstanding performance in solving difficult problems such as image \cite{Googlenet} 
 and speech \cite{Hinton_2012} recognition.  It has also found recent applications in physics, including event classification in high-energy and neutrino physics experiments \cite{Aurisano_2016, Baldi_2014, deOliveira_2016, Racah_2016}.
 
 Neural networks consist of layers of neurons which compute an output value based on one or several input values.  The output $z$ is a function of the weighted sum of the inputs $x_{i}$ plus a bias variable $b$, i.e. $z = f(\sum_{i}w_{i}x_{i} + b)$, where $f$ is called the activation function and $w_{i}$ are the weights of the neuron, one for each input.  The idea is that
@@ -326,7 +326,7 @@ Recently, multi-layer convolutional neural networks (CNNs) have been identified 
 convolutional layers of $n$ columns of $m$ neurons - layers of neurons that share a common set of $m\times n$ weights and a bias.  The set of 
 weights $+$ biases is called a filter or kernel, and this filter is combined in a multiplicative sum (a convolution) with an $m\times n$ subset of input neurons to give an output value.  The filter
 is moved along the image, each time covering a different $m\times n$ subset of input neurons, and the set of output values corresponding to a single filter is called a feature map.  With this
-strategy, the net can be trained to identify (roughly speaking) specific features of an image, and further convolutional layers can be used to analyze the higher-level features encoded in the feature maps output
+strategy, further convolutional layers can be used to analyze the higher-level features encoded in the feature maps output
 from previous layers.  Often to reduce the amount of computation and neurons present in deeper layers, max-pooling operations are performed, in which the neuron with maximum output
 value in an $m\times n$ window (or ``pool'') is selected, and all others in the pool are discarded.  Such an operation performed on a layer of neurons leads to a new layer of reduced size.
 A deep CNN may be constructed from a series of several such convolutional operations and max-pooling operations, along with more conventional fully-connected layers, in which all neurons 
@@ -337,13 +337,12 @@ schematic).
 	\centering
 	\includegraphics[scale = 0.6]{fig/general_nn.pdf}
 	\caption{Schematic of a deep convolutional neural network for 2-category classification.  The input layer consists of the pixel intensities of an image, possibly in multiple color channels.  The 
-		hidden layers consist of several different operations performed on the input neurons - this example shows a 3x3 convolution followed by a 3x3 max-pooling operation, with the resulting 
-		neurons input to a fully-connected layer which feeds the two neurons in the output layer.  Rather than reading the values of the activation functions of
-		the two neurons in the output layer, the values are converted to two values in a normalized exponential distribution.  These values can then be interpreted as probabilities of classification as
+		hidden layers consist of several different operations performed on the input neurons - this example shows a $3 \times 3$ convolution followed by a $3 \times 3$ max-pooling operation, 
+		with the resulting neurons input to a fully-connected layer which feeds the two neurons in the output layer.  The activation function of the two neurons in the final layer is such that the two outputs are exponentiated and normalized.  The values in such a layer, called a ``softmax'' readout layer, can then be interpreted as probabilities of classification as
 		signal or background.} \label{fig.generalnn}
 \end{figure}
 
-In this initial study, we make use of the GoogLeNet \cite{Googlenet}, which is a sophisticated 22-layers-deep convolutional network designed for image recognition.  As GoogLeNet was
+In this initial study, we make use of the GoogLeNet \cite{Googlenet}, which is a sophisticated 22-layers-deep convolutional neural network designed for image recognition.  As GoogLeNet was
 designed to classify and identify a wide range of features in a full-color images, a more suitable network is likely to exist for our specific problem of classifying particle tracks based on
 topology.  While further exploration of DNN architecture is essential to understanding the problem fully, our main goal in this study will be to show that DNNs can ``learn'' to classify 
 NEXT events as signal or background potentially better than previously developed conventional analysis methods.
@@ -404,7 +403,7 @@ corresponding to the signal efficiencies studied in the classical analysis, thou
 		merit $F$ to be maximized in an optimal $0\nu\beta\beta$ decay search is also shown as a function of background rejection.}
 \end{figure}
 
-The improvements realized in using the DNN-based analysis combined with lower diffusion translate to significant gains in half-life sensitivity.  Figure \ref{fig.halflife} shows the sensitivity at 90\% confidence level calculated using the Feldman-Cousins \cite{Feldman_1998} perscription as in \cite{NEXT_sensitivity} for the NEXT-100 conventional analysis and for NEXT-100 in the case of low-diffusion ($2 \times 2 \times 2$ mm$^3$ voxels) and using the DNN-based classification with optimal figure of merit. The substantial improvements realizable show the advantages of both an improved DNN-based analysis and achieving low diffusion in NEXT.
+The improvements realized in using the DNN-based analysis combined with lower diffusion translate to significant gains in half-life sensitivity.  Figure \ref{fig.halflife} shows the sensitivity at 90\% confidence level calculated using the Feldman-Cousins \cite{Feldman_1998} prescription as in \cite{NEXT_sensitivity} for the NEXT-100 conventional analysis and for NEXT-100 in the case of low-diffusion ($2 \times 2 \times 2$ mm$^3$ voxels) and using the DNN-based classification with optimal figure of merit. The substantial improvements realizable show the advantages of both an improved DNN-based analysis and achieving low diffusion in NEXT.
 
 \begin{figure}[!htb]
 	\centering
@@ -476,7 +475,7 @@ However, it may well be that the present DNN is simply not capable of learning e
 \end{table}
 
 \section{Conclusions}
-The NEXT topological signature of $0\nu\beta\beta$ decay events can be used to reject a significant number of background events, thus greatly increasing the senstivity to $0\nu\beta\beta$ decay.  A DNN-based analysis using GoogLeNet with just three projections seems to be capable of outperforming, by 15-60\% depending on the resolution of reconstruction, in signal/background separation, a conventional analysis based on locating energy ``blobs'' at the ends of the tracks produced by energetic electrons.  The production of secondaries coupled with energy fluctuations in energy deposition seems to be the principle cause of accuracy loss in the DNN analysis.  Future studies geared toward developing a DNN targeted on the problem at hand, possibly exploring fully 3D convolutional networks as opposed to using 2D projections, and attempting to extract information on what characteristics of the tracks it is ``learning,'' would lead to a more complete understanding of the possibilities and limitations of a DNN-based analysis.
+The NEXT topological signature of $0\nu\beta\beta$ decay events can be used to reject a significant number of background events, thus greatly increasing the sensitivity to $0\nu\beta\beta$ decay.  A DNN-based analysis using GoogLeNet with just three projections seems to be capable of outperforming, by 15-60\% depending on the resolution of reconstruction, in signal/background separation, a conventional analysis based on locating energy ``blobs'' at the ends of the tracks produced by energetic electrons.  The production of secondaries coupled with energy fluctuations in energy deposition seems to be the principle cause of accuracy loss in the DNN analysis.  Future studies geared toward developing a DNN targeted on the problem at hand, possibly exploring fully 3D convolutional networks as opposed to using 2D projections, and attempting to extract information on what characteristics of the tracks it is ``learning,'' would lead to a more complete understanding of the possibilities and limitations of a DNN-based analysis.
 
 \acknowledgments
 
