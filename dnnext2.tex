@@ -299,7 +299,7 @@ $2 \times 2 \times 2 \mathrm{~mm^3}$ are shown in Figs. \ref{fig.exampleProjs101
 	\includegraphics[scale = 0.35]{fig/blob1vsblob2_Paolina10105_Bi214.pdf}	
 	\includegraphics[scale = 0.35]{fig/blob1vsblob2_Paolina222_0vbb.pdf}
 	\includegraphics[scale = 0.35]{fig/blob1vsblob2_Paolina222_Bi214.pdf}
-	\caption{Computed blob candidate energies $E_{b,1}$ vs. $E_{b,2}$ for signal (left) and $^{208}$Tl background (right) events with $10 \times 10 \times 5$ mm$^3$ voxelization (above) and 
+	\caption{Computed blob candidate energies $E_{b,1}$ vs. $E_{b,2}$ for signal (left) and $^{214}$Bi background (right) events with $10 \times 10 \times 5$ mm$^3$ voxelization (above) and 
 		$2 \times 2 \times 2$ mm$^3$ voxelization (below).  The blob radius chosen was $r_b = 18$ mm for the $10 \times 10 \times 5$ mm$^3$~ voxelization and $r_b = 15$ mm for the $2 \times 2 \times 2$ mm$^3$~ voxelization.} \label{fig.blobcuts}
 \end{figure}
 
@@ -311,7 +311,7 @@ intense neural networks with many inner layers has become feasible.  These neura
 amounts of data exhibiting a vast array of features.  This idea of ``deep learning'' has been applied to yield outstanding performance in solving difficult problems such as image \cite{Googlenet} 
 and speech \cite{Hinton_2012} recognition.  It has also found recent applications in physics, including event classification in high-energy and neutrino physics experiments \cite{Aurisano_2016, Baldi_2014, deOliveira_2016, Racah_2016}.
 
-Neural networks consist of layers of neurons which compute an output value based on one or several input values.  The output $z$ is a function of the weighted sum of the inputs $x_{i}$ plus a bias variable $b$, i.e. $z = f(\sum_{i}w_{i}x_{i} + b)$, where $f$ is called the activation function and $w_{i}$ are the weights of the neuron, one for each input.  The idea is that
+Neural networks consist of layers of neurons which compute an output value based on one or several input values.  The output is a function of the weighted sum of the inputs $x_{i}$ plus a bias variable $b$, i.e. $f(\sum_{i}w_{i}x_{i} + b)$, where $f$ is called the activation function and $w_{i}$ are the weights of the neuron, one for each input.  The idea is that
 with several layers of many neurons connected together, the values of the final (``output'') layer of neurons will correspond to the solution of some problem given the values input to the
 initial layer (called the ``input'' layer).  The weights and biases of all neurons in the network together determine the final output value, and so the network must be trained (the weights and
 biases must be adjusted) so that the network solves the correct problem.  This is done by using a training dataset, and for each training event, presenting input data to the network, 
@@ -357,7 +357,7 @@ was run in which the NEXT-100 detector geometry was not present, and background 
 \bbonu\,energy distribution) were generated in a large box of pure xenon gas at 15 bar.  These events were then subject to the same voxelization procedure and single-track cut as described in 
 section \ref{ssec.reconstruction}.  
 
-For two different configurations of voxel size, GoogLeNet was trained on 202400 Xe box input events using one or more NVidia GeForce GPUs.  Each event was input to the net as a .png image 
+For two different configurations of voxel size, GoogLeNet was trained on 404800 Xe box input events (50\% signal, 50\% background) using one or more NVidia GeForce GPUs.  Each event was input to the net as a .png image 
 consisting of three color (RGB) channels, one for each of three projections of the 3D voxelized track, (R, G, B) $\rightarrow$ (xy, yz, xz).  This information for a signal event and a background event
 was shown earlier for different voxelizations in Fig. \ref{fig.exampleProjs10105} and Fig. \ref{fig.exampleProjs222}.
 
