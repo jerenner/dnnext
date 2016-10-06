@@ -124,8 +124,8 @@
 \abstract{We investigate the potential of using deep learning techniques to reject background 
 events in searches for neutrinoless double beta decay with high pressure xenon time projection 
 chambers capable of detailed track reconstruction.  The differences in the topological signatures of background and signal events can be learned by deep neural networks via training over many thousands of events.  These networks can then be used to classify further events as signal or background, providing an additional background rejection factor at an acceptable loss of
-efficiency.  The networks trained in this study performed 15-60\% better than previous methods developed based on the use of the
-same topological signatures, and there is potential for further improvement.}
+efficiency.  The networks trained in this study performed better than previous methods developed based on the use of the
+same topological signatures by a factor of 1.2 to 1.6, and there is potential for further improvement.}
 
 \keywords{Neutrinoless double beta decay; deep neural networks; TPC; high-pressure xenon chambers;  Xenon; NEXT-100 experiment}
 
@@ -476,7 +476,7 @@ However, it may well be that the present DNN is simply not capable of learning e
 \end{table}
 
 \section{Conclusions}
-The NEXT topological signature of $0\nu\beta\beta$ decay events can be used to reject a significant number of background events, thus greatly increasing the sensitivity to $0\nu\beta\beta$ decay.  A DNN-based analysis using GoogLeNet with just three projections seems to be capable of outperforming, by 15-60\% depending on the resolution of reconstruction, in signal/background separation, a conventional analysis based on locating energy ``blobs'' at the ends of the tracks produced by energetic electrons.  The production of secondaries coupled with energy fluctuations in energy deposition seems to be the principle cause of accuracy loss in the DNN analysis.  Future studies geared toward developing a DNN targeted on the problem at hand, possibly exploring fully 3D convolutional networks as opposed to using 2D projections, and attempting to extract information on what characteristics of the tracks it is ``learning,'' would lead to a more complete understanding of the possibilities and limitations of a DNN-based analysis.
+The NEXT topological signature of $0\nu\beta\beta$ decay events can be used to reject a significant number of background events, thus greatly increasing the sensitivity to $0\nu\beta\beta$ decay.  A DNN-based analysis using GoogLeNet with just three projections seems to be capable of outperforming, by a factor of 1.2 to 1.6, depending on the resolution of reconstruction, in signal/background separation, a conventional analysis based on locating energy ``blobs'' at the ends of the tracks produced by energetic electrons.  The production of secondaries coupled with energy fluctuations in energy deposition seems to be the principle cause of accuracy loss in the DNN analysis.  Future studies geared toward developing a DNN targeted on the problem at hand, possibly exploring fully 3D convolutional networks as opposed to using 2D projections, and attempting to extract information on what characteristics of the tracks it is ``learning,'' would lead to a more complete understanding of the possibilities and limitations of a DNN-based analysis.
 
 \acknowledgments
 
